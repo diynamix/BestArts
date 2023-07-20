@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-BestArts.Web-fa9a8019-884f-4047-ba3f-656209f37f78</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BestArts.Common\BestArts.Common.csproj" />
+    <ProjectReference Include="..\BestArts.Data.Models\BestArts.Data.Models.csproj" />
+    <ProjectReference Include="..\BestArts.Data\BestArts.Data.csproj" />
+    <ProjectReference Include="..\BestArts.Web.ViewModels\BestArts.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

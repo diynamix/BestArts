@@ -1,0 +1,15 @@
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\bin\Debug\net6.0\BestArts.Data.Models.deps.json
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\bin\Debug\net6.0\BestArts.Data.Models.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\bin\Debug\net6.0\BestArts.Data.Models.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\bin\Debug\net6.0\BestArts.Common.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\bin\Debug\net6.0\BestArts.Common.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.csproj.AssemblyReference.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.AssemblyInfo.cs
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.csproj.CopyComplete
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\refint\BestArts.Data.Models.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\BestArts.Data.Models.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Data.Models\obj\Debug\net6.0\ref\BestArts.Data.Models.dll

@@ -1,0 +1,12 @@
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\bin\Debug\net6.0\BestArts.Common.deps.json
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\bin\Debug\net6.0\BestArts.Common.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\bin\Debug\net6.0\BestArts.Common.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\BestArts.Common.csproj.AssemblyReference.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\BestArts.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\BestArts.Common.AssemblyInfoInputs.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\BestArts.Common.AssemblyInfo.cs
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\BestArts.Common.csproj.CoreCompileInputs.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\BestArts.Common.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\refint\BestArts.Common.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\BestArts.Common.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Common\obj\Debug\net6.0\ref\BestArts.Common.dll

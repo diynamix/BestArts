@@ -1,0 +1,15 @@
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\bin\Debug\net6.0\BestArts.Web.ViewModels.deps.json
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\bin\Debug\net6.0\BestArts.Web.ViewModels.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\bin\Debug\net6.0\BestArts.Web.ViewModels.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.csproj.AssemblyReference.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.AssemblyInfo.cs
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\refint\BestArts.Web.ViewModels.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\ref\BestArts.Web.ViewModels.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\bin\Debug\net6.0\BestArts.Common.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\bin\Debug\net6.0\BestArts.Common.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web.ViewModels\obj\Debug\net6.0\BestArts.Web.ViewModels.csproj.CopyComplete
