@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_form.css",
+      "PackagePath": "staticwebassets\\css\\styles_form.css"
+    },
+    {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_home.css",
       "PackagePath": "staticwebassets\\css\\styles_home.css"
     },

@@ -5,17 +5,17 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestArts.Web", "BestArts.Web\BestArts.Web.csproj", "{7A842C32-3BDF-4EE0-9F09-65DC44C3128E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestArts.Common", "BestArts.Common\BestArts.Common.csproj", "{24BE6A64-E0B7-40F2-929F-8760C9E7BA4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestArts.Common", "BestArts.Common\BestArts.Common.csproj", "{24BE6A64-E0B7-40F2-929F-8760C9E7BA4D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{20E319F3-489D-4A39-9538-0133F414551D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C1FF8EAA-44B3-4108-BFAE-AA786DC2C81B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestArts.Data", "BestArts.Data\BestArts.Data.csproj", "{F463D265-C20E-4BF8-B3A7-359FA62D3B41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestArts.Data", "BestArts.Data\BestArts.Data.csproj", "{F463D265-C20E-4BF8-B3A7-359FA62D3B41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestArts.Data.Models", "BestArts.Data.Models\BestArts.Data.Models.csproj", "{3F509830-0E2D-4C4E-B9B8-FDF4F0EA1E31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestArts.Data.Models", "BestArts.Data.Models\BestArts.Data.Models.csproj", "{3F509830-0E2D-4C4E-B9B8-FDF4F0EA1E31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestArts.Web.ViewModels", "BestArts.Web.ViewModels\BestArts.Web.ViewModels.csproj", "{C0624E8F-387D-4675-8BAC-1965CFE1B679}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestArts.Web.ViewModels", "BestArts.Web.ViewModels\BestArts.Web.ViewModels.csproj", "{C0624E8F-387D-4675-8BAC-1965CFE1B679}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

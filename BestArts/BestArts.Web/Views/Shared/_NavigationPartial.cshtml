@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using BestArts.Data.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 <div id="nav-bar">
     <ul class="left-nav">
@@ -36,7 +37,10 @@
                 <a href="basket.html">Basket</a>
             </li>
             <li class="nav-item">
-                <a href="account.html">Account</a>
+                @*<a href="account.html">Account</a>*@
+                <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="btn-unset">Logout</button>
+        </form>
             </li>
         </ul>
 

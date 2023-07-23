@@ -69,6 +69,11 @@ button {
     border-radius: 4px;
 }
 
+.btn-unset {
+    all: unset;
+    cursor: pointer;
+}
+
 .content-wrap {
     max-width: 900px;
     width: 90%;
