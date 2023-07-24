@@ -34,9 +34,7 @@ namespace BestArts.Web
             })
                 .AddEntityFrameworkStores<BestArtsDbContext>();
 
-            //builder.Services.AddApplicationServices(typeof(IProductService));
-
-            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddApplicationServices(typeof(IProductService));
 
             builder.Services.AddControllersWithViews();
 

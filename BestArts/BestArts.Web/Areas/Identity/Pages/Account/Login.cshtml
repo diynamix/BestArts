@@ -10,7 +10,7 @@
 }
 
 <div class="content-wrap">
-    <h2 class="divider">@ViewData["Title"]</h2>
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
 
     <section class="login">
         <form method="post">
@@ -35,15 +35,6 @@
                     <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
                     <br />
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-
-                <div>
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
-                    </div>
                 </div>
 
                 <div>

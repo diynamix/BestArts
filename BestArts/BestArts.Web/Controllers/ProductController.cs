@@ -4,7 +4,7 @@
     using Microsoft.AspNetCore.Mvc;
     
     using Services.Data.Interfaces;
-    using Web.ViewModels.Product;
+    using ViewModels.Product;
 
     public class ProductController : BaseController
     {

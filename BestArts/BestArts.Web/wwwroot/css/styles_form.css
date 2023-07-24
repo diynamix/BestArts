@@ -14,7 +14,7 @@ input, textarea {
 }
 
 fieldset {
-    width: 350px;
+    max-width: 350px;
     padding: 20px;
     border: 1.5px solid #87ACB0;
     border-radius: 4px;
@@ -29,6 +29,10 @@ fieldset {
 
     fieldset div:not(:last-child) {
         margin-bottom: 20px;
+    }
+
+    fieldset div:nth-last-child(2) {
+        margin-bottom: 40px;
     }
 
 main a {
@@ -49,6 +53,7 @@ main a {
 }
 
 .sbm-btn {
+    min-width: 50%;
     display: block;
     font-size: 18px;
     background-color: #CADEE0;
@@ -65,4 +70,19 @@ main a {
 .login-register-switch {
     text-align: center;
     margin-top: 30px;
+}
+
+
+/* Responsive
+-------------------------------------------------- */
+@media screen and (max-width: 390px) {
+    fieldset {
+        border-right: none;
+        border-left: none;
+        border-radius: 0%;
+    }
+
+        fieldset legend {
+            font-size: 22px;
+        }
 }
