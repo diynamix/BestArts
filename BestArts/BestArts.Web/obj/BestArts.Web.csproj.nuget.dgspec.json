@@ -218,6 +218,147 @@
         }
       }
     },
+    "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj",
+        "projectName": "BestArts.Services.Data",
+        "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj",
+        "packagesPath": "C:\\Users\\Diyana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Diyana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Common\\BestArts.Common.csproj": {
+                "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Common\\BestArts.Common.csproj"
+              },
+              "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data.Models\\BestArts.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data.Models\\BestArts.Data.Models.csproj"
+              },
+              "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj": {
+                "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj"
+              },
+              "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.ViewModels\\BestArts.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.ViewModels\\BestArts.Web.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.Infrastructure\\BestArts.Web.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.Infrastructure\\BestArts.Web.Infrastructure.csproj",
+        "projectName": "BestArts.Web.Infrastructure",
+        "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.Infrastructure\\BestArts.Web.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Diyana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Diyana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj": {
+                "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.ViewModels\\BestArts.Web.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -317,6 +458,12 @@
               },
               "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj": {
                 "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj"
+              },
+              "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj": {
+                "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj"
+              },
+              "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.Infrastructure\\BestArts.Web.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.Infrastructure\\BestArts.Web.Infrastructure.csproj"
               },
               "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.ViewModels\\BestArts.Web.ViewModels.csproj": {
                 "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.ViewModels\\BestArts.Web.ViewModels.csproj"

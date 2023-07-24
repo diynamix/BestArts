@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BestArts.Data\BestArts.Data.csproj" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BestArts.Services.Data\BestArts.Services.Data.csproj" />
   </ItemGroup>
 
 </Project>

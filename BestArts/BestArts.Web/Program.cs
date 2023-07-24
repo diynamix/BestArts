@@ -4,6 +4,9 @@ namespace BestArts.Web
     
     using Data;
     using Data.Models;
+    using Infrastructure.Extensions;
+    using Services.Data;
+    using Services.Data.Interfaces;
 
     public class Program
     {
@@ -30,6 +33,10 @@ namespace BestArts.Web
                     builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
             })
                 .AddEntityFrameworkStores<BestArtsDbContext>();
+
+            //builder.Services.AddApplicationServices(typeof(IProductService));
+
+            builder.Services.AddScoped<IProductService, ProductService>();
 
             builder.Services.AddControllersWithViews();
 

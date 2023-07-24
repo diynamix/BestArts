@@ -2,17 +2,21 @@
 {
     using System.Diagnostics;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     using ViewModels.Home;
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public HomeController()
+        [AllowAnonymous]
+        public IActionResult Index()
         {
+            return View();
         }
 
-        public IActionResult Index()
+        [AllowAnonymous]
+        public IActionResult Contacts()
         {
             return View();
         }

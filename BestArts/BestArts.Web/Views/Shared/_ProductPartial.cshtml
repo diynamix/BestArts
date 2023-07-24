@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using BestArts.Data.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="product-box">
+    <div class="product-img">
+        <a href="#">
+            <img src="~/img/handmade/quilling-card-flower-tulip-red.jpg" />
+        </a>
+    </div>
+    <div class="product-info">
+        <div class="product-name">
+            <a href="#">
+                Tulips
+            </a>
+        </div>
+        <div class="product-type">
+            Quilling Card
+        </div>
+        <div class="product-size">
+            15 x 10 cm
+        </div>
+    </div>
+    @if (User.Identity?.IsAuthenticated ?? false)
+    {
+        <div class="product-btns user">
+            <button class="add-to-wishlist-btn">Add to wishlist</button>
+        </div>
+    }
+    else
+    {
+        <div class="product-btns admin">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+    }
+</div>

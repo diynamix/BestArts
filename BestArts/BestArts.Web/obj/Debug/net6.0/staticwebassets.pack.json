@@ -17,8 +17,148 @@
       "PackagePath": "staticwebassets\\css\\styles_home.css"
     },
     {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_products.css",
+      "PackagePath": "staticwebassets\\css\\styles_products.css"
+    },
+    {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-baner.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-baner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-bottle.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-bottle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-baby-chair-blue.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-baby-chair-blue.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-bear-blue-big.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-bear-blue-big.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-bear-blue-small.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-bear-blue-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-bear-red-big.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-bear-red-big.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-bear-red-small.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-bear-red-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-dolphin-blue-big.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-dolphin-blue-big.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-duck-yellow-big.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-duck-yellow-big.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-anniversary-orange.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-anniversary-orange.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-birthday-pink.png",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-birthday-pink.png"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-brown.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-brown.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-orange.png",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-orange.png"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-rose-pink.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-rose-pink.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-tulip-red.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-tulip-red.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-wedding-beige.png",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-wedding-beige.png"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flower-yellow.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flower-yellow.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-flowers-occasion.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-flowers-occasion.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-folding-flower-orange.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-folding-flower-orange.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-folding-flower-rose-orange.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-folding-flower-rose-orange.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-snowdrop-white.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-snowdrop-white.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-card-violet.png",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-card-violet.png"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-doll.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-doll.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-flowers-vase.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-flowers-vase.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-magnet-basket-multi.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-magnet-basket-multi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-magnet-bear-panda.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-magnet-bear-panda.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-magnet-bulgarian-rose-red.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-magnet-bulgarian-rose-red.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-magnet-dolphin-blue.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-magnet-dolphin-blue.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-magnet-flower-circle-multi.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-magnet-flower-circle-multi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-magnet-heart-red.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-magnet-heart-red.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-money-envelope-gold.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-money-envelope-gold.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-money-envelope-pink.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-money-envelope-pink.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-money-envelope-red.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-money-envelope-red.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\handmade\\quilling-money-envelope-yellow.jpg",
+      "PackagePath": "staticwebassets\\img\\handmade\\quilling-money-envelope-yellow.jpg"
     },
     {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\img\\home-banner.jpg",

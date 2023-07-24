@@ -22,10 +22,6 @@
                 .HasPrecision(18, 2);
 
             builder
-                .Property(p => p.Length)
-                .HasPrecision(18, 2);
-
-            builder
                 .Property(p => p.Price)
                 .HasPrecision(18, 2);
 

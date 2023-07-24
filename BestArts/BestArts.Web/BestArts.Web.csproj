@@ -23,6 +23,8 @@
     <ProjectReference Include="..\BestArts.Common\BestArts.Common.csproj" />
     <ProjectReference Include="..\BestArts.Data.Models\BestArts.Data.Models.csproj" />
     <ProjectReference Include="..\BestArts.Data\BestArts.Data.csproj" />
+    <ProjectReference Include="..\BestArts.Services.Data\BestArts.Services.Data.csproj" />
+    <ProjectReference Include="..\BestArts.Web.Infrastructure\BestArts.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\BestArts.Web.ViewModels\BestArts.Web.ViewModels.csproj" />
   </ItemGroup>
 

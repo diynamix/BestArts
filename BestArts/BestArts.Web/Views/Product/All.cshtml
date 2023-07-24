@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ProductAllViewModel>
+
+@{
+    ViewData["Title"] = "Handmade";
+
+    var products = Model.ToList();
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_products.css" asp-append-version="true" />
+}
+
+
+<div class="content-wrap stones">
+    <h2 class="divider">@ViewData["Title"]</h2>
+
+    @if (!Model.Any())
+    {
+        <span>
+            Welcome to the Handmade page!
+            <br />
+            There are no products currently available.
+            <br />
+            Please check again later.
+        </span>
+    }
+    else
+    {
+        <section class="product-list">
+            @foreach (var product in products)
+            {
+                <div class="product-box">
+                    <div class="product-img">
+                        <a href="#">
+                            <img src="~/img/handmade/@product.ImageUrl" />
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">
+                            <a href="#">
+                                @product.Name
+                            </a>
+                        </div>
+                        <div class="product-type">
+                            @product.CategoryName
+                        </div>
+                        <div class="product-size">
+                            @product.Width.ToString("0.#") x @product.Height.ToString("0.#") cm
+                        </div>
+                        <div class="product-price">
+                            @product.Price BGN
+                        </div>
+                    </div>
+                    @if (User.IsInRole("Admin"))
+                    {
+                    <div class="product-btns admin">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    }
+                    else @*if (User.Identity?.IsAuthenticated ?? false)*@
+                    {
+                        <div class="product-btns user">
+                            <button class="add-to-wishlist-btn">Add to wishlist</button>
+                        </div>
+                    }
+                </div>
+            }
+        </section>
+    }
+
+    <section class="pagination">
+        <ul>
+            <li><a><i class="fas fa-angle-left"></i></a></li>
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a><i class="fas fa-angle-right"></i></a></li>
+        </ul>
+    </section>
+</div>

@@ -46,9 +46,6 @@
         [Required]
         public decimal Height { get; set; }
 
-        [Comment("Product length")]
-        public decimal? Length { get; set; }
-
         [Comment("Product price")]
         [Required]
         public decimal Price { get; set; }
