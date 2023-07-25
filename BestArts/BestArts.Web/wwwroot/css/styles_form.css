@@ -14,7 +14,7 @@ input, textarea {
 }
 
 fieldset {
-    max-width: 350px;
+    width: 350px;
     padding: 20px;
     border: 1.5px solid #87ACB0;
     border-radius: 4px;
@@ -42,6 +42,15 @@ main a {
     main a:hover {
         color: #87ACB0;
     }
+
+.form-group > * {
+    /*display: block;*/
+}
+
+.required::after {
+    content: " \002A";
+    color: #C08497;
+}
 
 .terms-of-use-link {
     text-decoration: none;
@@ -75,8 +84,9 @@ main a {
 
 /* Responsive
 -------------------------------------------------- */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 405px) {
     fieldset {
+        width: 100%;
         border-right: none;
         border-left: none;
         border-radius: 0%;

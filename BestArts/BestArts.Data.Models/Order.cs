@@ -7,6 +7,7 @@
 
     using Enums;
 
+    [Comment("Orders")]
     public class Order
     {
         public Order()

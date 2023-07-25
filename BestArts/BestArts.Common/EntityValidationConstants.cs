@@ -46,5 +46,23 @@
             public const string PriceMinValue = "0";
             public const string PriceMaxValue = "2000";
         }
+
+        public static class User
+        {
+            public const int UserNameMaxLength = 30;
+            public const int UserNameMinLength = 3;
+
+            public const int PasswordMinLength = 6;
+            public const int PasswordMaxLength = 100;
+
+            public const int FirstNameMinLength = 1;
+            public const int FirstNameMaxLength = 50;
+
+            public const int LastNameMinLength = 1;
+            public const int LastNameMaxLength = 50;
+
+            public const int PhoneNumberMinLength = 7;
+            public const int PhoneNumberMaxLength = 15;
+        }
     }
 }

@@ -5,6 +5,7 @@
 
     using Microsoft.EntityFrameworkCore;
 
+    [Comment("Order items")]
     public class OrderItem
     {
         [Comment("Order Id")]
