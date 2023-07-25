@@ -36,6 +36,11 @@ namespace BestArts.Web
 
             builder.Services.AddApplicationServices(typeof(IProductService));
 
+            builder.Services.ConfigureApplicationCookie(cfg =>
+            {
+                cfg.LoginPath = "/User/Login";
+            });
+
             builder.Services.AddControllersWithViews();
 
             WebApplication app = builder.Build();
