@@ -106,10 +106,14 @@
                 TempData[ErrorMessage] = "An error occured while login. Please try again!";
                 
                 return View(model);
-
             }
             
             return Redirect(model.ReturnUrl ?? "/Home/Index");
+        }
+
+        public IActionResult Account()
+        {
+            return View();
         }
     }
 }

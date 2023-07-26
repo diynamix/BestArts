@@ -1,12 +1,14 @@
 namespace BestArts.Web
 {
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     
     using Data;
     using Data.Models;
     using Infrastructure.Extensions;
-    using Services.Data;
     using Services.Data.Interfaces;
+
+    using static Common.GeneralApplicationConstants;
 
     public class Program
     {
@@ -32,6 +34,7 @@ namespace BestArts.Web
                 options.Password.RequiredLength =
                     builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
             })
+                .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<BestArtsDbContext>();
 
             builder.Services.AddApplicationServices(typeof(IProductService));
@@ -64,6 +67,8 @@ namespace BestArts.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.SeedAdministrator(DevelopmentAdminEmail);
 
             app.MapDefaultControllerRoute();
             app.MapRazorPages();

@@ -269,3 +269,8 @@ C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\BestArts.Services.Data.pdb
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\BestArts.Web.Infrastructure.dll
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\BestArts.Web.Infrastructure.pdb
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

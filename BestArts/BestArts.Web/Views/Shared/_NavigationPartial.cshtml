@@ -1,7 +1,15 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using BestArts.Data.Models
+@using BestArts.Services.Data.Interfaces
+@using BestArts.Web.Infrastructure.Extensions
+
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject IUserService userService
+
+@{
+    string displayUserName = await userService.GetFirstNameByEmailAsync(User.Identity?.Name!);
+}
 
 <div id="nav-bar">
     <ul class="left-nav">
@@ -31,16 +39,17 @@
     {
         <ul class="right-nav">
             <li class="nav-item">
-                <a href="wishlist.html">Wishlist</a>
+                <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
             </li>
             <li class="nav-item">
-                <a href="basket.html">Basket</a>
+                <a href="basket.html"><i class="fa-solid fa-basket-shopping"></i></a>
             </li>
             <li class="nav-item">
-                @*<a href="account.html">Account</a>*@
-                <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="btn-unset">Logout</button>
-        </form>
+                <a asp-controller="User" asp-action="Account">
+                    <i class="fa-solid fa-user">
+                    </i> 
+                        <span style=" font-family: Dubai;">@displayUserName</span>
+                </a>
             </li>
         </ul>
 
