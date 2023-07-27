@@ -2,7 +2,7 @@
 {
     public enum OrderStatusType
     {
-        Progressed,
+        InProgress,
         Sent,
         Delivered,
         Cancelled

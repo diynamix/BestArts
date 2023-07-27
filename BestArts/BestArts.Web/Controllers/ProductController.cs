@@ -22,5 +22,11 @@
 
             return View(viewModel);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+
+        }
     }
 }

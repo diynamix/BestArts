@@ -2,7 +2,7 @@ namespace BestArts.Web
 {
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
-    
+
     using Data;
     using Data.Models;
     using Infrastructure.Extensions;
@@ -17,7 +17,7 @@ namespace BestArts.Web
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            
+
             builder.Services.AddDbContext<BestArtsDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
@@ -68,7 +68,10 @@ namespace BestArts.Web
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.SeedAdministrator(DevelopmentAdminEmail);
+            if (app.Environment.IsDevelopment())
+            {
+                app.SeedAdministrator(DevelopmentAdminEmail);
+            }
 
             app.MapDefaultControllerRoute();
             app.MapRazorPages();
