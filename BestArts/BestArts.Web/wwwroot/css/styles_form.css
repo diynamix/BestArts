@@ -1,6 +1,6 @@
 /* Main
 .................................................. */
-input, textarea {
+input, textarea, select {
     font-size: 16px;
     padding: 4px;
     background-color: #f7f7f7;
@@ -44,7 +44,7 @@ main a {
     }
 
 .form-group > * {
-    /*display: block;*/
+    display: block;
 }
 
 .required::after {

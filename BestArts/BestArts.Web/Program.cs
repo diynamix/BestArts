@@ -6,6 +6,7 @@ namespace BestArts.Web
     using Data;
     using Data.Models;
     using Infrastructure.Extensions;
+    using Infrastructure.ModelBinders;
     using Services.Data.Interfaces;
 
     using static Common.GeneralApplicationConstants;
@@ -44,7 +45,12 @@ namespace BestArts.Web
                 cfg.LoginPath = "/User/Login";
             });
 
-            builder.Services.AddControllersWithViews();
+            builder.Services
+                .AddControllersWithViews()
+                .AddMvcOptions(options =>
+                {
+                    options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+                });
 
             WebApplication app = builder.Build();
 

@@ -1,5 +1,12 @@
 ﻿@model IEnumerable<ProductAllViewModel>
 
+@using Microsoft.AspNetCore.Identity;
+@using BestArts.Data.Models
+@using BestArts.Web.Infrastructure.Extensions
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
 @{
     ViewData["Title"] = "Handmade";
 
@@ -51,7 +58,7 @@
                             @product.Price BGN
                         </div>
                     </div>
-                    @if (User.IsInRole("Admin"))
+                    @if (User.IsAdmin())
                     {
                     <div class="product-btns admin">
                         <button class="edit-btn">Edit</button>

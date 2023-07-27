@@ -1,5 +1,74 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ProductFormModel
 @{
+    ViewData["Title"] = "Add Product";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_form.css" asp-append-version="true" />
+}
+
+<div class="content-wrap">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <section class="register">
+
+        <form id="registerForm" method="post">
+            <fieldset>
+
+                <legend>@ViewData["Title"]</legend>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="required"></label>
+                    <input asp-for="Name" class="form-control" aria-required="true" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageUrl" class="required"></label>
+                    <input asp-for="ImageUrl" class="form-control" aria-required="true" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Width" class="required"></label>
+                    <input asp-for="Width" class="form-control" aria-required="true" />
+                    <span asp-validation-for="Width" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Height" class="required"></label>
+                    <input asp-for="Height" class="form-control" aria-required="true" />
+                    <span asp-validation-for="Height" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Price" class="required"></label>
+                    <input asp-for="Price" class="form-control" aria-required="true" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="required"></label>
+                    <select asp-for="CategoryId" class="form-control" aria-required="true">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <button id="registerSubmit" type="submit" class="sbm-btn">Add Product</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BestArts.Services.Data.Interfaces
+﻿namespace BestArts.Services.Data.Interfaces
 {
-    internal interface ICategoryService
+    using Web.ViewModels.Category;
+
+    public interface ICategoryService
     {
+        Task<IEnumerable<ProductSelectCategoryFormModel>> AllCategoriesAsync();
+
+        Task<bool> ExistsByIdAsync(int id);
     }
 }

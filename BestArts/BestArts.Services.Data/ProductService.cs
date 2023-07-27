@@ -8,6 +8,7 @@
     using BestArts.Data;
     using Interfaces;
     using Web.ViewModels.Product;
+    using BestArts.Data.Models;
 
     public class ProductService : IProductService
     {
@@ -16,6 +17,22 @@
         public ProductService(BestArtsDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        public async Task CreateAsync(ProductFormModel formModel)
+        {
+            Product product = new Product()
+            {
+                Name = formModel.Name,
+                ImageUrl = formModel.ImageUrl,
+                Width = formModel.Width,
+                Height = formModel.Height,
+                Price = formModel.Price,
+                CategoryId = formModel.CategoryId,
+            };
+
+            await dbContext.Products.AddAsync(product);
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<ProductAllViewModel>> GetAllAvailableProductsAsync()

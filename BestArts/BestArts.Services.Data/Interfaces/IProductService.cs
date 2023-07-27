@@ -5,5 +5,7 @@
     public interface IProductService
     {
         Task<IEnumerable<ProductAllViewModel>> GetAllAvailableProductsAsync();
+
+        Task CreateAsync(ProductFormModel formModel);
     }
 }
