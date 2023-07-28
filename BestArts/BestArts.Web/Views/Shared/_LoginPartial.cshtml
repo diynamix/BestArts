@@ -7,45 +7,37 @@
 @inject UserManager<ApplicationUser> UserManager
 @inject IUserService UserService
 
-<ul class="right-nav">
-    @if (!SignInManager.IsSignedIn(User))
-    {
+@if (!SignInManager.IsSignedIn(User))
+{
+    <ul class="right-nav">
         <li class="nav-item">
             <a asp-area="" asp-controller="User" asp-action="Login">Login</a>
         </li>
         <li class="nav-item">
             <a asp-area="" asp-controller="User" asp-action="Register">Register</a>
         </li>
-    }
-    else
-    {
-        if (User.IsAdmin())
+    </ul>
+}
+else
+{
+    <ul class="right-nav">
+        @if (User.IsAdmin())
         {
             <li class="nav-item">
-                <a asp-area="" asp-controller="Order" asp-action="All">Orders</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
             </li>
         }
         else
         {
             <li class="nav-item">
-                <a href="wishlist.html">
-                    @*<i class="fa-solid fa-heart"></i>*@
-                    Wishlist
-                </a>
+                <a href="wishlist.html">Wishlist</a>
             </li>
             <li class="nav-item">
-                <a href="basket.html">
-                    @*<i class="fa-solid fa-basket-shopping"></i>*@
-                    Basket
-                </a>
+                <a href="basket.html">Basket</a>
             </li>
         }
         <li class="nav-item">
-            <a asp-controller="User" asp-action="Account">
-                @*<i class="fa-solid fa-user"></i>
-            <span style=" font-family: Dubai;">@displayUserName</span>*@
-                Account
-            </a>
+            <a asp-controller="User" asp-action="Account">Account</a>
         </li>
-    }
-</ul>
+    </ul>
+}

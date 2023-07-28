@@ -1,7 +1,5 @@
 ﻿namespace BestArts.Web.ViewModels.Product
 {
-    using Common;
-
     public class ProductAllViewModel
     {
         public string Id { get; set; } = null!;

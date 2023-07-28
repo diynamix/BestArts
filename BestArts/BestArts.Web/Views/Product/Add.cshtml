@@ -12,59 +12,7 @@
 
     <section class="form-section">
 
-        <form class="product-form" method="post">
-            <fieldset>
-
-                <legend>@ViewData["Title"]</legend>
-
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="form-group">
-                    <label asp-for="Name" class="required"></label>
-                    <input asp-for="Name" aria-required="true" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="ImageUrl" class="required"></label>
-                    <input asp-for="ImageUrl" aria-required="true" />
-                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Width" class="required"></label>
-                    <input asp-for="Width" aria-required="true" />
-                    <span asp-validation-for="Width" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Height" class="required"></label>
-                    <input asp-for="Height" aria-required="true" />
-                    <span asp-validation-for="Height" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Price" class="required"></label>
-                    <input asp-for="Price" aria-required="true" />
-                    <span asp-validation-for="Price" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="CategoryId" class="required"></label>
-                    <select asp-for="CategoryId" aria-required="true">
-                        @foreach (var category in Model.Categories)
-                        {
-                            <option value="@category.Id">@category.Name</option>
-                        }
-                    </select>
-                    <span asp-validation-for="Price" class="text-danger"></span>
-                </div>
-
-                <div>
-                    <button class="sbm-btn" type="submit">Add Product</button>
-                </div>
-            </fieldset>
-        </form>
+        <partial name="_ProductFormPartial" model="@Model" />
 
     </section>
 </div>
