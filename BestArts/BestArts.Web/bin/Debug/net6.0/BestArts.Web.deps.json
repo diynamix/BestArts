@@ -12,6 +12,7 @@
           "BestArts.Data": "1.0.0",
           "BestArts.Data.Models": "1.0.0",
           "BestArts.Services.Data": "1.0.0",
+          "BestArts.Services.Data.Models": "1.0.0",
           "BestArts.Web.Infrastructure": "1.0.0",
           "BestArts.Web.ViewModels": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
@@ -2995,10 +2996,19 @@
           "BestArts.Common": "1.0.0",
           "BestArts.Data": "1.0.0",
           "BestArts.Data.Models": "1.0.0",
+          "BestArts.Services.Data.Models": "1.0.0",
           "BestArts.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "BestArts.Services.Data.dll": {}
+        }
+      },
+      "BestArts.Services.Data.Models/1.0.0": {
+        "dependencies": {
+          "BestArts.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "BestArts.Services.Data.Models.dll": {}
         }
       },
       "BestArts.Web.Infrastructure/1.0.0": {
@@ -4982,6 +4992,11 @@
       "sha512": ""
     },
     "BestArts.Services.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BestArts.Services.Data.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

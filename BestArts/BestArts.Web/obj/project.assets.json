@@ -4906,6 +4906,7 @@
           "BestArts.Common": "1.0.0",
           "BestArts.Data": "1.0.0",
           "BestArts.Data.Models": "1.0.0",
+          "BestArts.Services.Data.Models": "1.0.0",
           "BestArts.Web.ViewModels": "1.0.0"
         },
         "compile": {
@@ -4913,6 +4914,19 @@
         },
         "runtime": {
           "bin/placeholder/BestArts.Services.Data.dll": {}
+        }
+      },
+      "BestArts.Services.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BestArts.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestArts.Services.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestArts.Services.Data.Models.dll": {}
         }
       },
       "BestArts.Web.Infrastructure/1.0.0": {
@@ -13072,6 +13086,11 @@
       "path": "../BestArts.Services.Data/BestArts.Services.Data.csproj",
       "msbuildProject": "../BestArts.Services.Data/BestArts.Services.Data.csproj"
     },
+    "BestArts.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../BestArts.Services.Data.Models/BestArts.Services.Data.Models.csproj",
+      "msbuildProject": "../BestArts.Services.Data.Models/BestArts.Services.Data.Models.csproj"
+    },
     "BestArts.Web.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../BestArts.Web.Infrastructure/BestArts.Web.Infrastructure.csproj",
@@ -13089,6 +13108,7 @@
       "BestArts.Data >= 1.0.0",
       "BestArts.Data.Models >= 1.0.0",
       "BestArts.Services.Data >= 1.0.0",
+      "BestArts.Services.Data.Models >= 1.0.0",
       "BestArts.Web.Infrastructure >= 1.0.0",
       "BestArts.Web.ViewModels >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
@@ -13139,6 +13159,9 @@
             },
             "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj": {
               "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj"
+            },
+            "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data.Models\\BestArts.Services.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data.Models\\BestArts.Services.Data.Models.csproj"
             },
             "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj": {
               "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data\\BestArts.Services.Data.csproj"

@@ -274,3 +274,5 @@ C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\BestArts.Services.Data.Models.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\bin\Debug\net6.0\BestArts.Services.Data.Models.pdb

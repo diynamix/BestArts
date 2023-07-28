@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BestArts.Services.Data.Models/1.0.0": {
+        "dependencies": {
+          "BestArts.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "BestArts.Services.Data.Models.dll": {}
+        }
+      },
+      "BestArts.Common/1.0.0": {
+        "runtime": {
+          "BestArts.Common.dll": {}
+        }
+      },
+      "BestArts.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "BestArts.Common": "1.0.0"
+        },
+        "runtime": {
+          "BestArts.Web.ViewModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BestArts.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BestArts.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BestArts.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

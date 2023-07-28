@@ -10,7 +10,7 @@
 
 .product-box {
     width: 100%;
-    min-width:200px;
+    min-width: 200px;
     border: 1px solid #87ACB0;
     border-radius: 4px;
     background-color: #FFFFFF;
@@ -117,26 +117,86 @@
 }
 
 
-/* ********** PAGINATION ********** */
-
-.pagination ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    list-style: none;
+/* ********** FILTER ********** */
+.filter-section {
+    margin: 0 0 30px 0;
 }
 
-.pagination a {
-    cursor: pointer;
-    color: #333;
-    letter-spacing: 15px
+.filter-form {
+    font-size: 0;
 }
 
-    .pagination a:hover {
-        color: #808080;
+label {
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+.form-group {
+    display: inline-block;
+}
+
+    .form-group:not(:last-child) {
+        margin: 0 20px 10px 0;
     }
+
+.search-btn {
+    cursor: pointer;
+    padding: 4px 6px;
+}
+    .search-btn:hover {
+        background-color: #F0F0F0;
+    }
+
+input, textarea, select {
+    font-size: 16px;
+    padding: 4px;
+    background-color: #f7f7f7;
+    border: 1.4px solid black;
+    border-radius: 4px;
+}
+
+
+/* ********** PAGINATION ********** */
+.pagination-section {
+    margin: 0 0 30px 0;
+}
+
+.pagination {
+    min-width: 350px;
+    max-width: 500px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-arrow, .page-number {
+    font-size: 24px;
+    color: #808080;
+    text-decoration: none;
+}
+
+    .btn-arrow:hover, .page-number:hover {
+        color: #6b6b6b;
+    }
+
+.page-number {
+    padding: 2px;
+}
+
+    .page-number:not(:last-child) {
+        margin: 0 7px 0 0;
+    }
+
+.link-disabled {
+    color: #adadad;
+    pointer-events: none;
+}
+
+.current-page {
+    color: #6b6b6b;
+    text-decoration: underline;
+}
 
 
 @media screen and (max-width: 950px) {

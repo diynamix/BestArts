@@ -1,0 +1,40 @@
+﻿@model ProductAllViewModel
+
+@using BestArts.Web.Infrastructure.Extensions
+
+<div class="product-box">
+    <div class="product-img">
+        <a href="#">
+            <img src="~/img/handmade/@Model.ImageUrl" />
+        </a>
+    </div>
+    <div class="product-info">
+        <div class="product-name">
+            <a href="#">
+                @Model.Name
+            </a>
+        </div>
+        <div class="product-type">
+            @Model.CategoryName
+        </div>
+        <div class="product-size">
+            @Model.Width.ToString("0.#") x @Model.Height.ToString("0.#") cm
+        </div>
+        <div class="product-price">
+            @Model.Price BGN
+        </div>
+    </div>
+    @if (User.IsAdmin())
+    {
+        <div class="product-btns admin">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+    }
+    else @*if (User.Identity?.IsAuthenticated ?? false)*@
+    {
+        <div class="product-btns user">
+            <button class="add-to-wishlist-btn">Add to wishlist</button>
+        </div>
+    }
+</div>

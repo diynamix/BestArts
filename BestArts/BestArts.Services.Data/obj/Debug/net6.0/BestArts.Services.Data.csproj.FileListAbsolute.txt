@@ -19,3 +19,5 @@ C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Services.Data\obj\De
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Services.Data\obj\Debug\net6.0\refint\BestArts.Services.Data.dll
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Services.Data\obj\Debug\net6.0\BestArts.Services.Data.pdb
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Services.Data\obj\Debug\net6.0\ref\BestArts.Services.Data.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Services.Data\bin\Debug\net6.0\BestArts.Services.Data.Models.dll
+C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Services.Data\bin\Debug\net6.0\BestArts.Services.Data.Models.pdb

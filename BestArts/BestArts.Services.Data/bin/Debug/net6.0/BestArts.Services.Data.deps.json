@@ -11,6 +11,7 @@
           "BestArts.Common": "1.0.0",
           "BestArts.Data": "1.0.0",
           "BestArts.Data.Models": "1.0.0",
+          "BestArts.Services.Data.Models": "1.0.0",
           "BestArts.Web.ViewModels": "1.0.0"
         },
         "runtime": {
@@ -548,6 +549,14 @@
           "BestArts.Data.Models.dll": {}
         }
       },
+      "BestArts.Services.Data.Models/1.0.0": {
+        "dependencies": {
+          "BestArts.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "BestArts.Services.Data.Models.dll": {}
+        }
+      },
       "BestArts.Web.ViewModels/1.0.0": {
         "dependencies": {
           "BestArts.Common": "1.0.0"
@@ -890,6 +899,11 @@
       "sha512": ""
     },
     "BestArts.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BestArts.Services.Data.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -9,6 +9,7 @@
 
     using static Common.GeneralApplicationConstants;
     using static Common.NotificationMessagesConstants;
+    using BestArts.Services.Data.Models.Product;
 
     public class ProductController : BaseController
     {
@@ -23,11 +24,16 @@
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> All()
+        [HttpGet]
+        public async Task<IActionResult> All([FromQuery]AllProductsQueryModel queryModel)
         {
-            IEnumerable<ProductAllViewModel> viewModel = await productService.GetAllAvailableProductsAsync();
+            AllProductsFilteredAndPagedServiceModel serviceModel = await productService.AllAsync(queryModel);
 
-            return View(viewModel);
+            queryModel.Products = serviceModel.Products;
+            queryModel.TotalProducts = serviceModel.TotalProductsCount;
+            queryModel.Categories = await categoryService.AllCategoryNamesAsync();
+
+            return View(queryModel);
         }
 
         //[Authorize(Roles = AdminRoleName)]

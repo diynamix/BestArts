@@ -60,7 +60,7 @@ body {
     min-height: 100vh;
 }
 
-button {
+button{
     /*all: unset;*/
     font-size: 18px;
     font-family: Dubai;
@@ -72,6 +72,21 @@ button {
 .btn-unset {
     all: unset;
     cursor: pointer;
+}
+
+.add-btn {
+    position: absolute;
+    color: #000000;
+    border: 1px solid;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: #CADEE0;
+    padding: 2px 20px;
+    border-color: #87ACB0;
+}
+
+.add-btn:hover {
+    background-color: #5bbdc7;
 }
 
 .content-wrap {

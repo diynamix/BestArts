@@ -861,6 +861,19 @@
           "bin/placeholder/BestArts.Data.Models.dll": {}
         }
       },
+      "BestArts.Services.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BestArts.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestArts.Services.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestArts.Services.Data.Models.dll": {}
+        }
+      },
       "BestArts.Web.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2145,6 +2158,11 @@
       "path": "../BestArts.Data.Models/BestArts.Data.Models.csproj",
       "msbuildProject": "../BestArts.Data.Models/BestArts.Data.Models.csproj"
     },
+    "BestArts.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../BestArts.Services.Data.Models/BestArts.Services.Data.Models.csproj",
+      "msbuildProject": "../BestArts.Services.Data.Models/BestArts.Services.Data.Models.csproj"
+    },
     "BestArts.Web.ViewModels/1.0.0": {
       "type": "project",
       "path": "../BestArts.Web.ViewModels/BestArts.Web.ViewModels.csproj",
@@ -2156,6 +2174,7 @@
       "BestArts.Common >= 1.0.0",
       "BestArts.Data >= 1.0.0",
       "BestArts.Data.Models >= 1.0.0",
+      "BestArts.Services.Data.Models >= 1.0.0",
       "BestArts.Web.ViewModels >= 1.0.0"
     ]
   },
@@ -2199,6 +2218,9 @@
             },
             "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj": {
               "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Data\\BestArts.Data.csproj"
+            },
+            "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data.Models\\BestArts.Services.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Services.Data.Models\\BestArts.Services.Data.Models.csproj"
             },
             "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.ViewModels\\BestArts.Web.ViewModels.csproj": {
               "projectPath": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web.ViewModels\\BestArts.Web.ViewModels.csproj"

@@ -3364,6 +3364,7 @@
           "BestArts.Common": "1.0.0",
           "BestArts.Data": "1.0.0",
           "BestArts.Data.Models": "1.0.0",
+          "BestArts.Services.Data.Models": "1.0.0",
           "BestArts.Web.ViewModels": "1.0.0"
         },
         "compile": {
@@ -3371,6 +3372,19 @@
         },
         "runtime": {
           "bin/placeholder/BestArts.Services.Data.dll": {}
+        }
+      },
+      "BestArts.Services.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BestArts.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestArts.Services.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestArts.Services.Data.Models.dll": {}
         }
       },
       "BestArts.Web.ViewModels/1.0.0": {
@@ -9259,6 +9273,11 @@
       "type": "project",
       "path": "../BestArts.Services.Data/BestArts.Services.Data.csproj",
       "msbuildProject": "../BestArts.Services.Data/BestArts.Services.Data.csproj"
+    },
+    "BestArts.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../BestArts.Services.Data.Models/BestArts.Services.Data.Models.csproj",
+      "msbuildProject": "../BestArts.Services.Data.Models/BestArts.Services.Data.Models.csproj"
     },
     "BestArts.Web.ViewModels/1.0.0": {
       "type": "project",
