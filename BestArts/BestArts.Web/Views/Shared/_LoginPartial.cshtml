@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using BestArts.Data.Models
+@using BestArts.Services.Data.Interfaces
+@using BestArts.Web.Infrastructure.Extensions
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject IUserService UserService
+
+<ul class="right-nav">
+    @if (!SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a asp-area="" asp-controller="User" asp-action="Login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="" asp-controller="User" asp-action="Register">Register</a>
+        </li>
+    }
+    else
+    {
+        if (User.IsAdmin())
+        {
+            <li class="nav-item">
+                <a asp-area="" asp-controller="Order" asp-action="All">Orders</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a href="wishlist.html">
+                    @*<i class="fa-solid fa-heart"></i>*@
+                    Wishlist
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="basket.html">
+                    @*<i class="fa-solid fa-basket-shopping"></i>*@
+                    Basket
+                </a>
+            </li>
+        }
+        <li class="nav-item">
+            <a asp-controller="User" asp-action="Account">
+                @*<i class="fa-solid fa-user"></i>
+            <span style=" font-family: Dubai;">@displayUserName</span>*@
+                Account
+            </a>
+        </li>
+    }
+</ul>

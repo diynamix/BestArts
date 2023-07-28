@@ -30,7 +30,7 @@
             return View(viewModel);
         }
 
-        [Authorize(Roles = AdminRoleName)]
+        //[Authorize(Roles = AdminRoleName)]
         [HttpGet]
         public async Task<IActionResult> Add()
         {
@@ -49,7 +49,7 @@
             return View(model);
         }
 
-        [Authorize(Roles = AdminRoleName)]
+        //[Authorize(Roles = AdminRoleName)]
         [HttpPost]
         public async Task<IActionResult> Add(ProductFormModel model)
         {

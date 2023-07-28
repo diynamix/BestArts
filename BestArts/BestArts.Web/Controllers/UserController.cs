@@ -1,6 +1,7 @@
 ﻿namespace BestArts.Web.Controllers
 {
     using Microsoft.AspNetCore.Authentication;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,7 @@
 
     using static Common.NotificationMessagesConstants;
 
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
@@ -21,6 +22,7 @@
             this.userManager = userManager;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Register()
         {
@@ -32,6 +34,7 @@
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterFormModel model)
         {
@@ -66,6 +69,7 @@
             return RedirectToAction("Index", "Home");
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Login(string? returnUrl = null)
         {
@@ -91,6 +95,7 @@
             return View(model);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login(LoginFormModel model)
         {
