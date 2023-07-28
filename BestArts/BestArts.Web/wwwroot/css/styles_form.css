@@ -1,5 +1,11 @@
 /* Main
 .................................................. */
+
+.form-section {
+    display: flex;
+    justify-content: center;
+}
+
 input, textarea, select {
     font-size: 16px;
     padding: 4px;
@@ -54,11 +60,6 @@ main a {
 
 .terms-of-use-link {
     text-decoration: none;
-}
-
-.login, .register, .contacts, .order-form {
-    display: flex;
-    justify-content: center;
 }
 
 .sbm-btn {

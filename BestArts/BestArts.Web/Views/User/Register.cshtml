@@ -1,4 +1,5 @@
 ﻿@model RegisterFormModel
+
 @{
     ViewData["Title"] = "Register";
 }
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="~/css/styles_form.css" asp-append-version="true" />
 }
 
-<div class="content-wrap">
+<div class="content-wrap register">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
-    <section class="register">
+    <section class="form-section">
 
-        <form id="registerForm" method="post">
+        <form id="register-form" method="post">
+
             <fieldset>
 
                 <legend>@ViewData["Title"]</legend>
@@ -21,31 +23,31 @@
 
                 <div class="form-group">
                     <label asp-for="FirstName" class="required"></label>
-                    <input asp-for="FirstName" class="form-control" autocomplete="first-name" aria-required="true" placeholder="Name" />
+                    <input asp-for="FirstName" autocomplete="first-name" aria-required="true" placeholder="Name" />
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="LastName" class="required"></label>
-                    <input asp-for="LastName" class="form-control" autocomplete="last-name" aria-required="true" placeholder="Surname" />
+                    <input asp-for="LastName" autocomplete="last-name" aria-required="true" placeholder="Surname" />
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Email" class="required"></label>
-                    <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" placeholder="you@example.com" />
+                    <input asp-for="Email" autocomplete="email" aria-required="true" placeholder="you@example.com" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Password" class="required"></label>
-                    <input asp-for="Password" class="form-control" aria-required="true" />
+                    <input asp-for="Password" aria-required="true" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="ConfirmPassword" class="required"></label>
-                    <input asp-for="ConfirmPassword" class="form-control" aria-required="true" />
+                    <input asp-for="ConfirmPassword" aria-required="true" />
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
 

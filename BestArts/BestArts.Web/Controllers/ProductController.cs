@@ -36,7 +36,7 @@
         {
             if (!User.IsAdmin())
             {
-                TempData[ErrorMessage] = "You cannot access this page! Please contact administrator!";
+                TempData[ErrorMessage] = "You cannot access this page!";
 
                 return RedirectToAction("Index", "Home");
             }
@@ -55,7 +55,7 @@
         {
             if (!User.IsAdmin())
             {
-                TempData[ErrorMessage] = "You cannot access this page! Please contact administrator!";
+                TempData[ErrorMessage] = "You cannot access this page!";
 
                 return RedirectToAction("Index", "Home");
             }
