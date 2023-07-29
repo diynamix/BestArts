@@ -90,5 +90,29 @@
             await dbContext.Products.AddAsync(product);
             await dbContext.SaveChangesAsync();
         }
+
+        public async Task<ProductDetailsViewModel?> GetDetailsByIdAsync(string productId)
+        {
+            Product? product = await dbContext.Products
+                .Include(p => p.Category)
+                .Where(p => p.IsDeleted == false)
+                .FirstOrDefaultAsync(p => p.Id.ToString() == productId);
+
+            if (product == null)
+            {
+                return null;
+            }
+
+            return new ProductDetailsViewModel()
+            {
+                Id = product.Id.ToString(),
+                Name = product.Name,
+                ImageUrl = product.ImageUrl,
+                CategoryName = product.Category.Name,
+                Width = product.Width,
+                Height = product.Height,
+                Price = product.Price,
+            };
+        }
     }
 }

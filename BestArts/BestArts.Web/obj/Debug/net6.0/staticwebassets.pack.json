@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\styles_home.css"
     },
     {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_product_details.css",
+      "PackagePath": "staticwebassets\\css\\styles_product_details.css"
+    },
+    {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_products.css",
       "PackagePath": "staticwebassets\\css\\styles_products.css"
     },

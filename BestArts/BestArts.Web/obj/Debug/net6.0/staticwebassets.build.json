@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UqRP6w28LTqP2HuPuk5GqdLTUaV5oMH99C6lAkJPus4=",
+  "Hash": "Ns6S9RzlCIZjNYzE3H6ftovfPk9CpUoXap+mz11FPGY=",
   "Source": "BestArts.Web",
   "BasePath": "_content/BestArts.Web",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles_home.css"
+    },
+    {
+      "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_product_details.css",
+      "SourceId": "BestArts.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\",
+      "BasePath": "_content/BestArts.Web",
+      "RelativePath": "css/styles_product_details.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles_product_details.css"
     },
     {
       "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_products.css",

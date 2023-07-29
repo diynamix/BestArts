@@ -5,11 +5,11 @@
 
     using Infrastructure.Extensions;
     using Services.Data.Interfaces;
+    using Services.Data.Models.Product;
     using ViewModels.Product;
 
     using static Common.GeneralApplicationConstants;
     using static Common.NotificationMessagesConstants;
-    using BestArts.Services.Data.Models.Product;
 
     public class ProductController : BaseController
     {
@@ -94,6 +94,22 @@
             }
 
             return RedirectToAction("All", "Product");
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> Details(string id)
+        {
+            ProductDetailsViewModel? viewModel = await productService.GetDetailsByIdAsync(id);
+
+            if (viewModel == null)
+            {
+                TempData[ErrorMessage] = "The product does not exist!";
+
+                return RedirectToAction("All", "Product");
+            }
+
+            return View(viewModel);
         }
     }
 }

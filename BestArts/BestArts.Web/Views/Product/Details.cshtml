@@ -1,0 +1,59 @@
+﻿@model ProductDetailsViewModel
+
+@using Microsoft.AspNetCore.Identity;
+@using BestArts.Data.Models
+@using BestArts.Web.Infrastructure.Extensions
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_product_details.css" asp-append-version="true" />
+}
+
+
+<div class="content-wrap stones">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    @if (User.IsAdmin())
+    {
+        <a class="add-btn button" asp-area="" asp-controller="Product" asp-action="Add">Add</a>
+    }
+
+    <div class="product-box">
+        <div class="product-img">
+            <img src="~/img/handmade/@Model.ImageUrl" />
+        </div>
+        <div class="product-info">
+            <div class="product-name">
+                @Model.Name
+            </div>
+            <div class="product-type">
+                Category: @Model.CategoryName
+            </div>
+            <div class="product-size">
+                Size: @Model.Width.ToString("0.#") x @Model.Height.ToString("0.#") cm
+            </div>
+            <div class="product-price">
+                Price: @Model.Price BGN
+            </div>
+            @if (User.IsAdmin())
+            {
+                <div class="product-btns admin">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            }
+            else @*if (User.Identity?.IsAuthenticated ?? false)*@
+            {
+                <div class="product-btns user">
+                    <button class="add-to-wishlist-btn">Add to wishlist</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
