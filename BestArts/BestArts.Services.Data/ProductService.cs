@@ -75,7 +75,7 @@
             };
         }
 
-        public async Task CreateAsync(ProductFormModel formModel)
+        public async Task<string> CreateAsync(ProductFormModel formModel)
         {
             Product product = new Product()
             {
@@ -89,6 +89,8 @@
 
             await dbContext.Products.AddAsync(product);
             await dbContext.SaveChangesAsync();
+
+            return product.Id.ToString();
         }
 
         public async Task EditProductByIdAsync(string productId, ProductFormModel formModel)

@@ -7,7 +7,7 @@
     {
         Task<AllProductsFilteredAndPagedServiceModel> AllAsync(AllProductsQueryModel queryModel);
 
-        Task CreateAsync(ProductFormModel formModel);
+        Task<string> CreateAsync(ProductFormModel formModel);
 
         Task<ProductDetailsViewModel> GetDetailsByIdAsync(string productId);
 

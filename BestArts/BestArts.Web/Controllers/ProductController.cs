@@ -88,9 +88,11 @@
                 return View(model);
             }
 
+            string productId;
+
             try
             {
-                await productService.CreateAsync(model);
+                productId = await productService.CreateAsync(model);
             }
             catch (Exception)
             {
@@ -101,7 +103,7 @@
                 return View(model);
             }
 
-            return RedirectToAction("All", "Product");
+            return RedirectToAction("Details", "Product", new { id = productId });
         }
 
         //[Authorize(Roles = AdminRoleName)]
