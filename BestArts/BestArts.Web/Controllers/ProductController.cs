@@ -26,7 +26,7 @@
 
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> All([FromQuery]AllProductsQueryModel queryModel)
+        public async Task<IActionResult> All([FromQuery] AllProductsQueryModel queryModel)
         {
             AllProductsFilteredAndPagedServiceModel serviceModel = await productService.AllAsync(queryModel);
 
@@ -48,12 +48,19 @@
                 return RedirectToAction("Index", "Home");
             }
 
-            ProductFormModel model = new ProductFormModel()
+            try
             {
-                Categories = await categoryService.AllCategoriesAsync(),
-            };
+                ProductFormModel model = new ProductFormModel()
+                {
+                    Categories = await categoryService.AllCategoriesAsync(),
+                };
 
-            return View(model);
+                return View(model);
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
         }
 
         //[Authorize(Roles = AdminRoleName)]
@@ -117,11 +124,18 @@
                 return RedirectToAction("Index", "Home");
             }
 
-            ProductFormModel formModel = await productService.GetProductForEditByIdAsync(id);
+            try
+            {
+                ProductFormModel formModel = await productService.GetProductForEditByIdAsync(id);
 
-            formModel.Categories = await categoryService.AllCategoriesAsync();
+                formModel.Categories = await categoryService.AllCategoriesAsync();
 
-            return View(formModel);
+                return View(formModel);
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
         }
 
         //[Authorize(Roles = AdminRoleName)]
@@ -180,9 +194,23 @@
                 return RedirectToAction("All", "Product");
             }
 
-            ProductDetailsViewModel viewModel = await productService.GetDetailsByIdAsync(id);
+            try
+            {
+                ProductDetailsViewModel viewModel = await productService.GetDetailsByIdAsync(id);
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
+        }
+
+        private IActionResult GeneralError()
+        {
+            TempData[ErrorMessage] = "Unexpected error occurred!";
+
+            return RedirectToAction("All", "Product");
         }
     }
 }
