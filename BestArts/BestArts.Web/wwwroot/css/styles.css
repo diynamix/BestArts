@@ -60,13 +60,19 @@ body {
     min-height: 100vh;
 }
 
-button{
+button, .button {
     /*all: unset;*/
+    color: #000000;
     font-size: 18px;
     font-family: Dubai;
     cursor: pointer;
     border: 1px solid;
     border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    line-height: normal;
+    padding: 2px 8px;
+    overflow: hidden;
 }
 
 .btn-unset {
@@ -76,12 +82,7 @@ button{
 
 .add-btn {
     position: absolute;
-    color: #000000;
-    border: 1px solid;
-    border-radius: 4px;
-    text-decoration: none;
     background-color: #CADEE0;
-    padding: 2px 20px;
     border-color: #87ACB0;
 }
 

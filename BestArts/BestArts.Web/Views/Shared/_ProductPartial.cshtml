@@ -27,7 +27,7 @@
     @if (User.IsAdmin())
     {
         <div class="product-btns admin">
-            <button class="edit-btn">Edit</button>
+            <a asp-controller="Product" asp-action="Edit" class="edit-btn button">Edit</a>
             <button class="delete-btn">Delete</button>
         </div>
     }
