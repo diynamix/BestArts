@@ -93,6 +93,17 @@
             return product.Id.ToString();
         }
 
+        public async Task DeleteByProductIdAsync(string productId)
+        {
+            Product product = await dbContext.Products
+                .Where(p => p.IsDeleted == false)
+                .FirstAsync(p => p.Id.ToString() == productId);
+
+            product.IsDeleted = true;
+
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task EditProductByIdAsync(string productId, ProductFormModel formModel)
         {
             Product product = await dbContext.Products
@@ -152,6 +163,21 @@
                 Width = product.Width,
                 Height = product.Height,
                 Price = product.Price,
+            };
+        }
+
+        public async Task<ProductSoftDeleteViewModel> GetProductForSoftDeleteByIdAsync(string productId)
+        {
+            Product product = await dbContext.Products
+               .Include(p => p.Category)
+               .Where(p => p.IsDeleted == false)
+               .FirstAsync(p => p.Id.ToString() == productId);
+
+            return new ProductSoftDeleteViewModel()
+            {
+                Name = product.Name,
+                ImageUrl = product.ImageUrl,
+                CategoryName = product.Category.Name,
             };
         }
     }

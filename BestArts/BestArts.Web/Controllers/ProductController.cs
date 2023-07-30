@@ -8,9 +8,7 @@
     using Services.Data.Models.Product;
     using ViewModels.Product;
 
-    using static Common.GeneralApplicationConstants;
     using static Common.NotificationMessagesConstants;
-    using Microsoft.CodeAnalysis.Differencing;
 
     public class ProductController : BaseController
     {
@@ -181,6 +179,72 @@
             }
 
             return RedirectToAction("Details", "Product", new { id });
+        }
+
+        //[Authorize(Roles = AdminRoleName)]
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+            bool productExists = await productService.ExistsByIdAsync(id);
+
+            if (!productExists)
+            {
+                TempData[ErrorMessage] = "The product does not exist!";
+
+                return RedirectToAction("All", "Product");
+            }
+
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            try
+            {
+                ProductSoftDeleteViewModel model = await productService.GetProductForSoftDeleteByIdAsync(id);
+
+                return View(model);
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
+        }
+
+        //[Authorize(Roles = AdminRoleName)]
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id, ProductSoftDeleteViewModel model)
+        {
+            bool productExists = await productService.ExistsByIdAsync(id);
+
+            if (!productExists)
+            {
+                TempData[ErrorMessage] = "The product does not exist!";
+
+                return RedirectToAction("All", "Product");
+            }
+
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            try
+            {
+                await productService.DeleteByProductIdAsync(id);
+
+                TempData[WarningMessage] = "Product was successfully deleted!";
+
+                return RedirectToAction("All", "Product");
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
         }
 
         [AllowAnonymous]

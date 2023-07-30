@@ -1,0 +1,38 @@
+﻿@model ProductSoftDeleteViewModel
+
+@{
+    ViewBag.Title = "Delete Product";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_product_details.css" asp-append-version="true" />
+        }
+
+<div class="content-wrap add-product">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <section class="form-section">
+
+        <form method="post" asp-action="Delete">
+            <div>
+                <div class="product-img">
+                    <img src="~/img/handmade/@Model.ImageUrl" alt="Product Image">
+                </div>
+                <div class="product-info">
+                    <div class="form-group product-name">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" disabled="disabled" />
+                    </div>
+                    <div class="form-group product-type">
+                        <label asp-for="CategoryName"></label>
+                        <input asp-for="CategoryName" disabled="disabled" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Delete" class="delete-btn button" />
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </section>
+</div>

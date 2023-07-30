@@ -5,7 +5,7 @@
 <div class="product-box">
     <div class="product-img">
         <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.Id">
-            <img src="~/img/handmade/@Model.ImageUrl" />
+            <img src="~/img/handmade/@Model.ImageUrl" alt="Product Image" />
         </a>
     </div>
     <div class="product-info">
@@ -28,7 +28,7 @@
     {
         <div class="product-btns admin">
             <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" class="edit-btn button">Edit</a>
-            <button class="delete-btn">Delete</button>
+            <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" class="delete-btn button">Delete</a>
         </div>
     }
     else @*if (User.Identity?.IsAuthenticated ?? false)*@

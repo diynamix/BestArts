@@ -16,5 +16,9 @@
         Task<ProductFormModel> GetProductForEditByIdAsync(string productId);
 
         Task EditProductByIdAsync(string productId, ProductFormModel formModel);
+
+        Task<ProductSoftDeleteViewModel> GetProductForSoftDeleteByIdAsync(string productId);
+
+        Task DeleteByProductIdAsync(string productId);
     }
 }
