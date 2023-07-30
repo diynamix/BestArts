@@ -10,6 +10,7 @@
 
     using static Common.GeneralApplicationConstants;
     using static Common.NotificationMessagesConstants;
+    using Microsoft.CodeAnalysis.Differencing;
 
     public class ProductController : BaseController
     {
@@ -96,18 +97,90 @@
             return RedirectToAction("All", "Product");
         }
 
-        [AllowAnonymous]
+        //[Authorize(Roles = AdminRoleName)]
         [HttpGet]
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Edit(string id)
         {
-            ProductDetailsViewModel? viewModel = await productService.GetDetailsByIdAsync(id);
+            bool productExists = await productService.ExistsByIdAsync(id);
 
-            if (viewModel == null)
+            if (!productExists)
             {
                 TempData[ErrorMessage] = "The product does not exist!";
 
                 return RedirectToAction("All", "Product");
             }
+
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            ProductFormModel formModel = await productService.GetProductForEditByIdAsync(id);
+
+            formModel.Categories = await categoryService.AllCategoriesAsync();
+
+            return View(formModel);
+        }
+
+        //[Authorize(Roles = AdminRoleName)]
+        [HttpPost]
+        public async Task<IActionResult> Edit(string id, ProductFormModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                model.Categories = await categoryService.AllCategoriesAsync();
+
+                return View(model);
+            }
+
+            bool productExists = await productService.ExistsByIdAsync(id);
+
+            if (!productExists)
+            {
+                TempData[ErrorMessage] = "The product does not exist!";
+
+                return RedirectToAction("All", "Product");
+            }
+
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            try
+            {
+                await productService.EditProductByIdAsync(id, model);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "Unexpected error occured while editing product!");
+
+                model.Categories = await categoryService.AllCategoriesAsync();
+
+                return View(model);
+            }
+
+            return RedirectToAction("Details", "Product", new { id });
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> Details(string id)
+        {
+            bool productExists = await productService.ExistsByIdAsync(id);
+
+            if (!productExists)
+            {
+                TempData[ErrorMessage] = "The product does not exist!";
+
+                return RedirectToAction("All", "Product");
+            }
+
+            ProductDetailsViewModel viewModel = await productService.GetDetailsByIdAsync(id);
 
             return View(viewModel);
         }

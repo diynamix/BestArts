@@ -2,9 +2,9 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    
+
     using Microsoft.EntityFrameworkCore;
-    
+
     using BestArts.Data;
     using BestArts.Data.Models;
     using Interfaces;
@@ -91,17 +91,37 @@
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task<ProductDetailsViewModel?> GetDetailsByIdAsync(string productId)
+        public async Task EditProductByIdAsync(string productId, ProductFormModel formModel)
         {
-            Product? product = await dbContext.Products
+            Product product = await dbContext.Products
+                .Where(p => p.IsDeleted == false)
+                .FirstAsync(p => p.Id.ToString() == productId);
+
+            product.Name = formModel.Name;
+            product.ImageUrl = formModel.ImageUrl;
+            product.Width = formModel.Width;
+            product.Height = formModel.Height;
+            product.Price = formModel.Price;
+            product.CategoryId = formModel.CategoryId;
+
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<bool> ExistsByIdAsync(string productId)
+        {
+            bool result = await dbContext.Products
+                .Where(p => p.IsDeleted == false)
+                .AnyAsync(p => p.Id.ToString() == productId);
+
+            return result;
+        }
+
+        public async Task<ProductDetailsViewModel> GetDetailsByIdAsync(string productId)
+        {
+            Product product = await dbContext.Products
                 .Include(p => p.Category)
                 .Where(p => p.IsDeleted == false)
-                .FirstOrDefaultAsync(p => p.Id.ToString() == productId);
-
-            if (product == null)
-            {
-                return null;
-            }
+                .FirstAsync(p => p.Id.ToString() == productId);
 
             return new ProductDetailsViewModel()
             {
@@ -109,6 +129,24 @@
                 Name = product.Name,
                 ImageUrl = product.ImageUrl,
                 CategoryName = product.Category.Name,
+                Width = product.Width,
+                Height = product.Height,
+                Price = product.Price,
+            };
+        }
+
+        public async Task<ProductFormModel> GetProductForEditByIdAsync(string productId)
+        {
+            Product product = await dbContext.Products
+                .Include(p => p.Category)
+                .Where(p => p.IsDeleted == false)
+                .FirstAsync(p => p.Id.ToString() == productId);
+
+            return new ProductFormModel()
+            {
+                Name = product.Name,
+                ImageUrl = product.ImageUrl,
+                CategoryId = product.Category.Id,
                 Width = product.Width,
                 Height = product.Height,
                 Price = product.Price,

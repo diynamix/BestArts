@@ -1,0 +1,22 @@
+﻿@model ProductFormModel
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_form.css" asp-append-version="true" />
+}
+
+<div class="content-wrap add-product">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <section class="form-section">
+
+        <partial name="_ProductFormPartial" model="@Model" />
+
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
