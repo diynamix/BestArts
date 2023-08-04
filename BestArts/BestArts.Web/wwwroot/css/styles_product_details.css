@@ -51,8 +51,8 @@
 }
 
 /* Product-btns */
-.product-btns {
-    display: flex;
+.product-btns, form {
+    display: inline-block;
 }
 
 .add-to-wishlist-btn {

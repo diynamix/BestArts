@@ -16,7 +16,7 @@
 }
 
 
-<div class="content-wrap stones">
+<div class="content-wrap">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
     <div class="product-box">
@@ -36,19 +36,17 @@
             <div class="product-price">
                 Price: @Model.Price BGN
             </div>
-            @if (User.IsAdmin())
-            {
-                <div class="product-btns admin">
+            <div class="product-btns">
+                @if (User.IsAdmin())
+                {
                     <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" class="edit-btn button">Edit</a>
                     <a asp-controller="Product" asp-action="Delete" asp-route-id="@Model.Id" class="delete-btn button">Delete</a>
-                </div>
-            }
-            else @*if (User.Identity?.IsAuthenticated ?? false)*@
-            {
-                <div class="product-btns user">
+                }
+                else @*if (User.Identity?.IsAuthenticated ?? false)*@
+                {
                     <button class="add-to-wishlist-btn">Add to wishlist</button>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
 </div>

@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
     public class ProductSoftDeleteViewModel
     {
+        public string Id { get; set; } = null!;
+
         public string Name { get; set; } = null!;
 
         [Display(Name = "Image link")]

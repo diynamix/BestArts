@@ -8,31 +8,29 @@
     <link rel="stylesheet" href="~/css/styles_product_details.css" asp-append-version="true" />
         }
 
-<div class="content-wrap add-product">
+<div class="content-wrap">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
-    <section class="form-section">
-
-        <form method="post" asp-action="Delete">
-            <div>
-                <div class="product-img">
-                    <img src="~/img/handmade/@Model.ImageUrl" alt="Product Image">
-                </div>
-                <div class="product-info">
-                    <div class="form-group product-name">
-                        <label asp-for="Name"></label>
-                        <input asp-for="Name" disabled="disabled" />
-                    </div>
-                    <div class="form-group product-type">
-                        <label asp-for="CategoryName"></label>
-                        <input asp-for="CategoryName" disabled="disabled" />
-                    </div>
-                    <div>
-                        <input type="submit" value="Delete" class="delete-btn button" />
-                    </div>
-                </div>
+    <div class="product-box">
+        <div class="product-img">
+            <img src="~/img/handmade/@Model.ImageUrl" alt="Product Image" />
+        </div>
+        <div class="product-info">
+            <div class="product-name">
+                @Model.Name
             </div>
-        </form>
-
-    </section>
+            <div class="product-type">
+                Category: @Model.CategoryName
+            </div>
+            <br />
+            Are you sure you want to delete this product?
+            <div class="product-btns">
+                <br />
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.Id" class="edit-btn button">Cancel</a>
+                <form method="post" asp-action="Delete">
+                    <input type="submit" value="Delete" class="delete-btn button" />
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

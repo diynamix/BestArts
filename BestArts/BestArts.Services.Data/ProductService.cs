@@ -24,6 +24,7 @@
         public async Task<AllProductsFilteredAndPagedServiceModel> AllAsync(AllProductsQueryModel queryModel)
         {
             IQueryable<Product> productsQuery = dbContext.Products
+                .Where(p => p.IsDeleted == false)
                 .AsQueryable();
 
             if (!string.IsNullOrEmpty(queryModel.Category))
@@ -51,7 +52,7 @@
             };
 
             IEnumerable<ProductAllViewModel> allProducts = await productsQuery
-                .Where(p => p.IsDeleted == false)
+                //.Where(p => p.IsDeleted == false)
                 .Skip((queryModel.CurrentPage - 1) * queryModel.ProductsPerPage)
                 .Take(queryModel.ProductsPerPage)
                 .Select(p => new ProductAllViewModel()
@@ -175,6 +176,7 @@
 
             return new ProductSoftDeleteViewModel()
             {
+                Id = product.Id.ToString(),
                 Name = product.Name,
                 ImageUrl = product.ImageUrl,
                 CategoryName = product.Category.Name,

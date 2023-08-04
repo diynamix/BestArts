@@ -19,7 +19,6 @@
         {
             this.productService = productService;
             this.categoryService = categoryService;
-
         }
 
         [AllowAnonymous]
