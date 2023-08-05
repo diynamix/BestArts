@@ -1,7 +1,6 @@
 ﻿namespace BestArts.Services.Data
 {
     using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
 
@@ -193,6 +192,19 @@
                 ImageUrl = product.ImageUrl,
                 CategoryName = product.Category.Name,
             };
+        }
+
+        public async Task RemoveProductFromWishlistAsync(string userId, string productId)
+        {
+            Wishlist? wishlist = await dbContext.Wishlists
+                .FirstOrDefaultAsync(w => w.UserId.ToString() == userId &&
+                            w.ProductId.ToString() == productId);
+
+            if (wishlist != null)
+            {
+                dbContext.Wishlists.Remove(wishlist);
+                await dbContext.SaveChangesAsync();
+            }
         }
     }
 }

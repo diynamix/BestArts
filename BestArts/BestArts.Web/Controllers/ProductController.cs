@@ -294,29 +294,71 @@
 
                 return RedirectToAction("All", "Product");
             }
-            await Console.Out.WriteLineAsync("First pass");
+
             bool alreadyAdded = await wishlistService.IsAlreadyAddedAsync(userid, productId);
 
             if (alreadyAdded)
             {
-                TempData[ErrorMessage] = "This product is already added in your wishlist!";
+                TempData[ErrorMessage] = "This product is already added to your wishlist!";
 
                 return RedirectToAction("All", "Product");
             }
-            await Console.Out.WriteLineAsync("Second pass");
 
             try
             {
                 await productService.AddProductToWishlistAsync(userid, productId);
 
                 TempData[SuccessMessage] = "Product added to wishlist!";
-
-                return RedirectToAction("All", "Product");
             }
             catch (Exception)
             {
                 return GeneralError();
             }
+
+            return RedirectToAction("All", "Product");
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromWishlist(string userid, string productId)
+        {
+            if (User?.Identity?.IsAuthenticated == false)
+            {
+                TempData[ErrorMessage] = "You need to login first!";
+
+                return RedirectToAction("Login", "User");
+            }
+
+            bool productExists = await productService.ExistsByIdAsync(productId);
+
+            if (!productExists)
+            {
+                TempData[ErrorMessage] = "The product does not exist!";
+
+                return RedirectToAction("All", "Product");
+            }
+
+            bool alreadyAdded = await wishlistService.IsAlreadyAddedAsync(userid, productId);
+
+            if (!alreadyAdded)
+            {
+                TempData[ErrorMessage] = "This product is not added to your wishlist!";
+
+                return RedirectToAction("All", "Product");
+            }
+
+            try
+            {
+                await productService.RemoveProductFromWishlistAsync(userid, productId);
+
+                TempData[WarningMessage] = "Product removed from wishlist!";
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
+
+            return RedirectToAction("All", "Product");
         }
 
         private IActionResult GeneralError()

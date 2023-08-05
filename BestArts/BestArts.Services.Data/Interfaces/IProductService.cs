@@ -22,5 +22,7 @@
         Task DeleteProductByIdAsync(string productId);
 
         Task AddProductToWishlistAsync(string userId, string productId);
+
+        Task RemoveProductFromWishlistAsync(string userId, string productId);
     }
 }
