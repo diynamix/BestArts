@@ -14,11 +14,15 @@
     {
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
+        private readonly IWishlistService wishlistService;
 
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        public ProductController(IProductService productService,
+            ICategoryService categoryService,
+            IWishlistService wishlistService)
         {
             this.productService = productService;
             this.categoryService = categoryService;
+            this.wishlistService = wishlistService;
         }
 
         [AllowAnonymous]
@@ -234,7 +238,7 @@
 
             try
             {
-                await productService.DeleteByProductIdAsync(id);
+                await productService.DeleteProductByIdAsync(id);
 
                 TempData[WarningMessage] = "Product was successfully deleted!";
 
@@ -264,6 +268,50 @@
                 ProductDetailsViewModel viewModel = await productService.GetDetailsByIdAsync(id);
 
                 return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> AddToWishlist(string userid, string productId)
+        {
+            if (User?.Identity?.IsAuthenticated == false)
+            {
+                TempData[ErrorMessage] = "You need to login first!";
+
+                return RedirectToAction("Login", "User");
+            }
+
+            bool productExists = await productService.ExistsByIdAsync(productId);
+
+            if (!productExists)
+            {
+                TempData[ErrorMessage] = "The product does not exist!";
+
+                return RedirectToAction("All", "Product");
+            }
+            await Console.Out.WriteLineAsync("First pass");
+            bool alreadyAdded = await wishlistService.IsAlreadyAddedAsync(userid, productId);
+
+            if (alreadyAdded)
+            {
+                TempData[ErrorMessage] = "This product is already added in your wishlist!";
+
+                return RedirectToAction("All", "Product");
+            }
+            await Console.Out.WriteLineAsync("Second pass");
+
+            try
+            {
+                await productService.AddProductToWishlistAsync(userid, productId);
+
+                TempData[SuccessMessage] = "Product added to wishlist!";
+
+                return RedirectToAction("All", "Product");
             }
             catch (Exception)
             {

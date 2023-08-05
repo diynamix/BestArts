@@ -3,9 +3,11 @@
 @using Microsoft.AspNetCore.Identity;
 @using BestArts.Data.Models
 @using BestArts.Web.Infrastructure.Extensions
+@using BestArts.Services.Data.Interfaces
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject IWishlistService WishlistService
 
 @{
     ViewData["Title"] = "Product Details";
@@ -42,9 +44,21 @@
                     <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" class="edit-btn button">Edit</a>
                     <a asp-controller="Product" asp-action="Delete" asp-route-id="@Model.Id" class="delete-btn button">Delete</a>
                 }
-                else @*if (User.Identity?.IsAuthenticated ?? false)*@
+                else
                 {
-                    <button class="add-to-wishlist-btn">Add to wishlist</button>
+                    @if ((User?.Identity?.IsAuthenticated ?? false) &&
+                        (await WishlistService.IsAlreadyAddedAsync(User.GetId()!, Model.Id)))
+                    {
+                        <form method="post" asp-controller="Product" asp-action="Remove" asp-route-userId="@User.GetId()" asp-route-productId="@Model.Id">
+                            <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" asp-controller="Product" asp-action="AddToWishlist" asp-route-userId="@User?.GetId()" asp-route-productId="@Model.Id">
+                            <input type="submit" value="Add to wishlist" class="wishlist-btn success-btn button" />
+                        </form>
+                    }
                 }
             </div>
         </div>

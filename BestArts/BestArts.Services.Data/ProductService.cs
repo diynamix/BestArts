@@ -21,6 +21,18 @@
             this.dbContext = dbContext;
         }
 
+        public async Task AddProductToWishlistAsync(string userId, string productId)
+        {
+            Wishlist wishlist = new Wishlist()
+            {
+                UserId = Guid.Parse(userId),
+                ProductId = Guid.Parse(productId)
+            };
+
+            await dbContext.Wishlists.AddAsync(wishlist);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<AllProductsFilteredAndPagedServiceModel> AllAsync(AllProductsQueryModel queryModel)
         {
             IQueryable<Product> productsQuery = dbContext.Products
@@ -94,7 +106,7 @@
             return product.Id.ToString();
         }
 
-        public async Task DeleteByProductIdAsync(string productId)
+        public async Task DeleteProductByIdAsync(string productId)
         {
             Product product = await dbContext.Products
                 .Where(p => p.IsDeleted == false)

@@ -66,7 +66,7 @@
 
             await signInManager.SignInAsync(user, false);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("All", "Product");
         }
 
         [AllowAnonymous]
@@ -113,7 +113,9 @@
                 return View(model);
             }
             
-            return Redirect(model.ReturnUrl ?? "/Home/Index");
+            //return Redirect(model.ReturnUrl ?? "/Home/Index");
+            return RedirectToAction("All", "Product");
+
         }
 
         public IActionResult Account()

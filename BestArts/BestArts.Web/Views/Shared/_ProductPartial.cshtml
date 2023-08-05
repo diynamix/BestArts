@@ -1,6 +1,9 @@
 ﻿@model ProductAllViewModel
 
+@using BestArts.Services.Data.Interfaces
 @using BestArts.Web.Infrastructure.Extensions
+
+@inject IWishlistService WishlistService
 
 <div class="product-box">
     <div class="product-img">
@@ -28,13 +31,25 @@
     {
         <div class="product-btns admin">
             <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" class="edit-btn button">Edit</a>
-            <a asp-controller="Product" asp-action="Delete" asp-route-id="@Model.Id" class="delete-btn button">Delete</a>
+            <a asp-controller="Product" asp-action="Delete" asp-route-id="@Model.Id" class="danger-btn button">Delete</a>
         </div>
     }
-    else @*if (User.Identity?.IsAuthenticated ?? false)*@
+    else
     {
         <div class="product-btns user">
-            <button class="add-to-wishlist-btn">Add to wishlist</button>
+            @if ((User?.Identity?.IsAuthenticated ?? false) &&
+                    (await WishlistService.IsAlreadyAddedAsync(User.GetId()!, Model.Id)))
+            {
+                <form method="post" asp-controller="Product" asp-action="Remove" asp-route-userId="@User.GetId()" asp-route-productId="@Model.Id">
+                    <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
+                </form>
+            }
+            else
+            {
+                <form method="post" asp-controller="Product" asp-action="AddToWishlist" asp-route-userId="@User?.GetId()" asp-route-productId="@Model.Id">
+                    <input type="submit" value="Add to wishlist" class="wishlist-btn success-btn button" />
+                </form>
+            }
         </div>
     }
 </div>

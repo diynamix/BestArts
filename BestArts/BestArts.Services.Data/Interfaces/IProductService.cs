@@ -19,6 +19,8 @@
 
         Task<ProductSoftDeleteViewModel> GetProductForSoftDeleteByIdAsync(string productId);
 
-        Task DeleteByProductIdAsync(string productId);
+        Task DeleteProductByIdAsync(string productId);
+
+        Task AddProductToWishlistAsync(string userId, string productId);
     }
 }

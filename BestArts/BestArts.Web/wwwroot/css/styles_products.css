@@ -73,35 +73,13 @@
     margin-bottom: 16px;
 }
 
-.add-to-wishlist-btn {
-    background-color: #DFF2F2;
-    border-color: #87ACB0;
+.wishlist-btn {
     width: 100%;
 }
 
-    .add-to-wishlist-btn:hover {
-        background-color: #6dd6d6;
-    }
-
-.edit-btn {
-    background-color: #C1E8E8;
-    border-color: #87ACB0;
+.edit-btn, .delete-btn {
     width: 40%;
 }
-
-    .edit-btn:hover {
-        background-color: #20B2AA;
-    }
-
-.delete-btn {
-    background-color: #FFCCCB;
-    border-color: #C08497;
-    width: 40%;
-}
-
-    .delete-btn:hover {
-        background-color: #FF0000;
-    }
 
 /* ********** WISHLIST COLORS ********** */
 .wishlist .product-box {
@@ -198,6 +176,8 @@ input, textarea, select {
     text-decoration: underline;
 }
 
+
+/* ********** RESPONSIVE ********** */
 
 @media screen and (max-width: 950px) {
     .product-list {
