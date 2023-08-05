@@ -46,24 +46,19 @@ button, .button {
 }
 
 .add-btn {
+    color: #000000;
+    text-decoration: none;
     position: absolute;
 }
 
-.add-btn, .edit-btn {
+.green-btn {
     background-color: #C1E8E8;
-    border-color: #87ACB0;
-}
-
-    .add-btn:hover, .edit-btn:hover {
-        background-color: #20B2AA;
-    }
-
-.success-btn {
     background-color: #DFF2F2;
     border-color: #87ACB0;
 }
 
-    .success-btn:hover {
+    .green-btn:hover {
+        background-color: #20B2AA;
         background-color: #6DD6D6;
     }
 

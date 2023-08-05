@@ -5,13 +5,13 @@
 @using BestArts.Services.Data.Interfaces
 @using BestArts.Web.Infrastructure.Extensions
 
+
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject IWishlistService WishlistService
 
-
 @{
-    ViewData["Title"] = "Handmade";
+    ViewData["Title"] = "Wishlist";
 
     var products = Model.Products.ToList();
 
@@ -19,20 +19,15 @@
     TempData["CategorySort"] = Model.Category;
     TempData["SearchString"] = Model.SearchString;
     TempData["ProductSorting"] = Model.ProductSorting;
-    TempData["ReturnPage"] = "Product";
+    TempData["ReturnPage"] = "Wishlist";
 }
 
 @section css {
-    <link rel="stylesheet" href="~/css/styles_products.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/styles_products.css" asp-append-version="true" />
 }
 
 
-<div class="content-wrap handmade">
-    @if (User.IsAdmin())
-    {
-        <a class="add-btn green-btn button" asp-area="" asp-controller="Product" asp-action="Add">Add</a>
-    }
-
+<div class="content-wrap wishlist">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
     <section class="filter-section">
@@ -54,7 +49,7 @@
                         <option value="">All</option>
                         @foreach (var category in Model.Categories)
                         {
-                            <option value="@category">@category</option>
+                                <option value="@category">@category</option>
                         }
                     </select>
                 </div>
@@ -89,7 +84,7 @@
 
             <div class="pagination-arrow">
                 <a class="btn-arrow @(Model.CurrentPage == 1 ? "link-disabled" : string.Empty)"
-                   asp-controller="Product"
+                   asp-controller="Wishlist"
                    asp-action="All"
                    asp-route-currentPage="@previousPage"
                    asp-route-category="@Model.Category"
@@ -100,8 +95,8 @@
             <div class="pagination-pages">
                 @for (int i = 1; i <= maxPage; i++)
                 {
-                    <a class="page-number @(Model.CurrentPage == i ? "link-disabled current-page" : string.Empty)"
-                   asp-controller="Product"
+                        <a class="page-number @(Model.CurrentPage == i ? "link-disabled current-page" : string.Empty)"
+                   asp-controller="Wishlist"
                    asp-action="All"
                    asp-route-currentPage="@i"
                    asp-route-category="@Model.Category"
@@ -117,7 +112,7 @@
 
             <div class="pagination-arrow">
                 <a class="btn-arrow @(shouldNextPageBeDisabled ? "link-disabled" : string.Empty)"
-                   asp-controller="Product"
+                   asp-controller="Wishlist"
                    asp-action="All"
                    asp-route-currentPage="@(Model.CurrentPage + 1)"
                    asp-route-category="@Model.Category"
@@ -129,68 +124,45 @@
 
     @if (!products.Any())
     {
-        <span>
-            Welcome to the Handmade page!
-            <br />
-            There are no products matching the selected filters.
-            <br />
-            Please try again later.
-        </span>
+            <span>
+                You have not placed any products in your wishlist yet!
+            </span>
     }
     else
     {
-        <section class="product-list">
-
+            <section class="product-list">
             @foreach (var product in products)
             {
                 @*<partial name="_ProductPartial" model="@product" />*@
-                <div class="product-box">
-                    <div class="product-img">
-                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
-                            <img src="~/img/handmade/@product.ImageUrl" alt="Product Image" />
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">
-                            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
+                        <div class="product-box">
+                            <div class="product-img">
+                                <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
+                                    <img src="~/img/handmade/@product.ImageUrl" alt="Product Image" />
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
                                 @product.Name
-                            </a>
-                        </div>
-                        <div class="product-type">
+                                    </a>
+                                </div>
+                                <div class="product-type">
                             @product.CategoryName
-                        </div>
-                        <div class="product-size">
+                                </div>
+                                <div class="product-size">
                             @product.Width.ToString("0.#") x @product.Height.ToString("0.#") cm
-                        </div>
-                        <div class="product-price">
+                                </div>
+                                <div class="product-price">
                             @product.Price BGN
-                        </div>
-                    </div>
-                    <div class="product-btns admin">
-                        @if (User != null && User.IsAdmin())
-                        {
-                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="edit-btn green-btn button">Edit</a>
-                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="delete-btn danger-btn button">Delete</a>
-                        }
-                        else
-                        {
-                            @if ((User?.Identity?.IsAuthenticated ?? false) &&
-                                (await WishlistService.IsAlreadyAddedAsync(User.GetId()!, product.Id)))
-                            {
+                                </div>
+                            </div>
+                            <div class="product-btns">                        
                                 <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
                                     <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
                                 </form>
-                            }
-                            else
-                            {
-                                <form method="post" asp-controller="Product" asp-action="AddToWishlist" asp-route-userId="@User?.GetId()" asp-route-productId="@product.Id">
-                                    <input type="submit" value="Add to wishlist" class="wishlist-btn green-btn button" />
-                                </form>
-                            }
-                        }
-                    </div>
-                </div>
+                            </div>
+                        </div>
             }
-        </section>
+            </section>
     }
 </div>

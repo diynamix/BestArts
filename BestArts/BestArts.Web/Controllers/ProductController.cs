@@ -242,7 +242,13 @@
 
                 TempData[WarningMessage] = "Product was successfully deleted!";
 
-                return RedirectToAction("All", "Product");
+                return RedirectToAction("All", "Product", new
+                {
+                    currentPage = TempData.Peek("CurrentPage"),
+                    categorySort = TempData.Peek("Category"),
+                    searchString = TempData.Peek("SearchString"),
+                    productSorting = (int)TempData.Peek("ProductSorting")
+                });
             }
             catch (Exception)
             {
@@ -315,20 +321,18 @@
                 return GeneralError();
             }
 
-            return RedirectToAction("All", "Product");
+            return RedirectToAction("All", TempData["ReturnPage"]?.ToString() ?? "Product", new
+            {
+                currentPage = TempData.Peek("CurrentPage"),
+                categorySort = TempData.Peek("Category"),
+                searchString = TempData.Peek("SearchString"),
+                productSorting = (int)TempData.Peek("ProductSorting")
+            });
         }
 
-        [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> RemoveFromWishlist(string userid, string productId)
+        public async Task<IActionResult> RemoveFromWishlist(string userid, string productId, string? wishlist)
         {
-            if (User?.Identity?.IsAuthenticated == false)
-            {
-                TempData[ErrorMessage] = "You need to login first!";
-
-                return RedirectToAction("Login", "User");
-            }
-
             bool productExists = await productService.ExistsByIdAsync(productId);
 
             if (!productExists)
@@ -358,7 +362,13 @@
                 return GeneralError();
             }
 
-            return RedirectToAction("All", "Product");
+            return RedirectToAction("All", TempData["ReturnPage"]?.ToString() ?? "Product", new
+            {
+                currentPage = TempData.Peek("CurrentPage"),
+                categorySort = TempData.Peek("Category"),
+                searchString = TempData.Peek("SearchString"),
+                productSorting = (int)TempData.Peek("ProductSorting")
+            });
         }
 
         private IActionResult GeneralError()
