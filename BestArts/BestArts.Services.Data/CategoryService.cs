@@ -5,6 +5,7 @@
     using BestArts.Data;
     using Interfaces;
     using Web.ViewModels.Category;
+    using BestArts.Data.Models;
 
     public class CategoryService : ICategoryService
     {
@@ -15,7 +16,21 @@
             this.dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<ProductSelectCategoryFormModel>> AllCategoriesAsync()
+        public async Task<IEnumerable<AllCategoriesViewModel>> AllCategoriesAsync()
+        {
+            IEnumerable<AllCategoriesViewModel> allCategories = await dbContext.Categories
+                .AsNoTracking()
+                .Select(c => new AllCategoriesViewModel
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                })
+                .ToArrayAsync();
+
+            return allCategories;
+        }
+
+        public async Task<IEnumerable<ProductSelectCategoryFormModel>> AllCategoriesForProductSelectFormModelAsync()
         {
             IEnumerable<ProductSelectCategoryFormModel> allCategories = await dbContext.Categories
                 .AsNoTracking()
@@ -38,12 +53,41 @@
             return allNames;
         }
 
+        public async Task EditCategoryByIdAsync(string categoryId, CategoryFormModel formModel)
+        {
+            Category category = await dbContext.Categories
+                .FirstAsync(p => p.Id == int.Parse(categoryId));
+
+            category.Name = formModel.Name;
+
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<bool> ExistsByIdAsync(int id)
         {
             bool exists = await dbContext.Categories
                 .AnyAsync(c => c.Id == id);
 
             return exists;
+        }
+
+        public async Task<bool> ExistsByNameAsync(string name)
+        {
+            bool exists = await dbContext.Categories
+                .AnyAsync(c => c.Name == name);
+
+            return exists;
+        }
+
+        public async Task<CategoryFormModel> GetCategoryForEditByIdAsync(string categoryId)
+        {
+            Category product = await dbContext.Categories
+                .FirstAsync(c => c.Id.ToString() == categoryId);
+
+            return new CategoryFormModel()
+            {
+                Name = product.Name,
+            };
         }
     }
 }

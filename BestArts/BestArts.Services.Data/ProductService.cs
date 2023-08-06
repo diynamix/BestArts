@@ -63,7 +63,6 @@
             };
 
             IEnumerable<ProductAllViewModel> allProducts = await productsQuery
-                //.Where(p => p.IsDeleted == false)
                 .Skip((queryModel.CurrentPage - 1) * queryModel.ProductsPerPage)
                 .Take(queryModel.ProductsPerPage)
                 .Select(p => new ProductAllViewModel()

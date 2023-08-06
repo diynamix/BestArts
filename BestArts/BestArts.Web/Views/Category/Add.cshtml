@@ -1,0 +1,40 @@
+﻿@model CategoryFormModel
+
+@{
+    ViewData["Title"] = "Add Category";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_form.css" asp-append-version="true" />
+}
+
+<div class="content-wrap add-product">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <section class="form-section">
+
+        <form class="product-form" method="post">
+            <fieldset>
+
+                <legend>@ViewData["Title"]</legend>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="required"></label>
+                    <input asp-for="Name" aria-required="true" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <button class="sbm-btn" type="submit">@ViewData["Title"]</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

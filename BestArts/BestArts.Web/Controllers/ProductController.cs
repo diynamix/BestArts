@@ -62,7 +62,7 @@
             {
                 ProductFormModel model = new ProductFormModel()
                 {
-                    Categories = await categoryService.AllCategoriesAsync(),
+                    Categories = await categoryService.AllCategoriesForProductSelectFormModelAsync(),
                 };
 
                 return View(model);
@@ -93,7 +93,7 @@
 
             if (!ModelState.IsValid)
             {
-                model.Categories = await categoryService.AllCategoriesAsync();
+                model.Categories = await categoryService.AllCategoriesForProductSelectFormModelAsync();
 
                 return View(model);
             }
@@ -108,7 +108,7 @@
             {
                 ModelState.AddModelError(string.Empty, "Unexpected error occured while trying to add new product!");
 
-                model.Categories = await categoryService.AllCategoriesAsync();
+                model.Categories = await categoryService.AllCategoriesForProductSelectFormModelAsync();
 
                 return View(model);
             }
@@ -140,7 +140,7 @@
             {
                 ProductFormModel formModel = await productService.GetProductForEditByIdAsync(id);
 
-                formModel.Categories = await categoryService.AllCategoriesAsync();
+                formModel.Categories = await categoryService.AllCategoriesForProductSelectFormModelAsync();
 
                 return View(formModel);
             }
@@ -156,7 +156,7 @@
         {
             if (!ModelState.IsValid)
             {
-                model.Categories = await categoryService.AllCategoriesAsync();
+                model.Categories = await categoryService.AllCategoriesForProductSelectFormModelAsync();
 
                 return View(model);
             }
@@ -185,7 +185,7 @@
             {
                 ModelState.AddModelError(string.Empty, "Unexpected error occured while editing product!");
 
-                model.Categories = await categoryService.AllCategoriesAsync();
+                model.Categories = await categoryService.AllCategoriesForProductSelectFormModelAsync();
 
                 return View(model);
             }
