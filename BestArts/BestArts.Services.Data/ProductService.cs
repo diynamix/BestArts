@@ -112,6 +112,7 @@
                 .FirstAsync(p => p.Id.ToString() == productId);
 
             product.IsDeleted = true;
+            product.DeletedOn = DateTime.Now;
 
             await dbContext.SaveChangesAsync();
         }
