@@ -53,6 +53,17 @@
             return allNames;
         }
 
+        public async Task CreateAsync(CategoryFormModel formModel)
+        {
+            Category category = new Category()
+            {
+                Name = formModel.Name,
+            };
+
+            await dbContext.Categories.AddAsync(category);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task EditCategoryByIdAsync(string categoryId, CategoryFormModel formModel)
         {
             Category category = await dbContext.Categories

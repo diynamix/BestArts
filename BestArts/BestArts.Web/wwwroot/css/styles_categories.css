@@ -1,0 +1,34 @@
+/* ********** CATEGORIES ********** */
+
+.categories {
+    display: block;
+    overflow: hidden;
+}
+
+.category-box {
+    min-width: 200px;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.category-box:not(:last-child) {
+    border-bottom: 1px solid #87ACB0;
+}
+
+.category-name, .category-btns {
+    display: inline-block;
+}
+
+.category-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Product-btns */
+.category-btns {
+    justify-content: space-evenly;
+    padding: 0 12px;
+}
+
+/* ********** RESPONSIVE ********** */

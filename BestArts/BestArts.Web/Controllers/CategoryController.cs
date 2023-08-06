@@ -7,8 +7,6 @@
     using Services.Data.Interfaces;
 
     using static Common.NotificationMessagesConstants;
-    using BestArts.Services.Data;
-    using BestArts.Web.ViewModels.Product;
 
     public class CategoryController : BaseController
     {
@@ -23,6 +21,64 @@
         {
             IEnumerable<AllCategoriesViewModel> viewModel = await categoryService.AllCategoriesAsync();
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            try
+            {
+                CategoryFormModel model = new CategoryFormModel();
+
+                return View(model);
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(CategoryFormModel model)
+        {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            bool categoryExists = await categoryService.ExistsByNameAsync(model.Name);
+
+            if (categoryExists)
+            {
+                ModelState.AddModelError(nameof(model.Name), "This category is already added!");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            try
+            {
+                await categoryService.CreateAsync(model);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "Unexpected error occured while trying to add new category!");
+
+                return View(model);
+            }
+
+            return RedirectToAction("All", "Category");
         }
 
         [HttpGet]
