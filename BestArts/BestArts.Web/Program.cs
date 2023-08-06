@@ -10,6 +10,7 @@ namespace BestArts.Web
     using Services.Data.Interfaces;
 
     using static Common.GeneralApplicationConstants;
+    using Microsoft.AspNetCore.Mvc;
 
     public class Program
     {
@@ -50,6 +51,7 @@ namespace BestArts.Web
                 .AddMvcOptions(options =>
                 {
                     options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+                    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
                 });
 
             WebApplication app = builder.Build();

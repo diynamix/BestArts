@@ -78,26 +78,6 @@
                 })
                 .ToArrayAsync();
 
-            if (!allProducts.Any())
-            {
-                queryModel.CurrentPage = queryModel.CurrentPage == 1 ? queryModel.CurrentPage : queryModel.CurrentPage - 1;
-
-                allProducts = await productsQuery
-                .Skip((queryModel.CurrentPage - 1) * queryModel.ProductsPerPage)
-                .Take(queryModel.ProductsPerPage)
-                .Select(p => new ProductAllViewModel()
-                {
-                    Id = p.Id.ToString(),
-                    Name = p.Name,
-                    ImageUrl = p.ImageUrl,
-                    CategoryName = p.Category.Name,
-                    Width = p.Width,
-                    Height = p.Height,
-                    Price = p.Price,
-                })
-                .ToArrayAsync();
-            }
-
             int totalProducts = productsQuery.Count();
 
             return new AllProductsFilteredAndPagedServiceModel()

@@ -29,6 +29,15 @@
         [HttpGet]
         public async Task<IActionResult> All([FromQuery] AllProductsQueryModel queryModel)
         {
+            if ((TempData["ProductsLeftOnPage"] != null) &&
+                ((int)TempData["ProductsLeftOnPage"] == 1))
+            {
+                queryModel.CurrentPage
+                    = queryModel.CurrentPage <= 1
+                    ? 1
+                    : queryModel.CurrentPage - 1;
+            }
+
             AllProductsFilteredAndPagedServiceModel serviceModel = await productService.AllAsync(queryModel);
 
             queryModel.Products = serviceModel.Products;
