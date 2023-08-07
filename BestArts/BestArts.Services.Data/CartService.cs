@@ -30,9 +30,11 @@
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<AllCartsViewModel>> AllCartsAsync()
+        public async Task<IEnumerable<AllCartsViewModel>> AllCartsAsync(string userId)
         {
             IEnumerable<AllCartsViewModel> allCarts = await dbContext.Carts
+                .Where(c => c.Product.IsDeleted == false &&
+                            c.UserId.ToString() == userId)
                 .AsNoTracking()
                 .Select(c => new AllCartsViewModel
                 {

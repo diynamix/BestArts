@@ -7,7 +7,7 @@
     ViewData["Title"] = await userService.GetFullNameByEmailAsync(User.Identity?.Name!);
 }
 
-<div class="content-wrap">
+<div class="content-wrap account">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

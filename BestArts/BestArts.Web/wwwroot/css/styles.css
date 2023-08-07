@@ -184,6 +184,7 @@ main {
 
     main h2 {
         font-size: 32px;
+        color: #C08497;
         letter-spacing: 2px;
         text-align: center;
         margin: 0 0 40px 0;
@@ -193,6 +194,10 @@ main {
         font-size: 20px;
         letter-spacing: 1px;
     }
+
+.handmade h2, .contacts h2, .login h2, .register h2, .all-categories h2, .checkout h2 {
+    color: #87ACB0;
+}
 
 /* Footer
 .................................................. */

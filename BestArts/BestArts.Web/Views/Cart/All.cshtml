@@ -8,9 +8,12 @@
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject IOrderService OrderService;
 
 @{
     ViewData["Title"] = "Basket";
+
+    decimal totalPrice = await OrderService.GetSubtotalPriceOfAllItemsForOrderAsync(User.GetId()!);
 }
 
 @section css {
@@ -38,8 +41,14 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="6">
-                            <a class="checkout-btn button">Checkout</a>
+                        <td colspan="2">
+                            Total price:
+                        </td>
+                        <td class="product-price">
+                            @($"{totalPrice:f2}") BGN
+                        </td>
+                        <td colspan="3">
+                            <a class="checkout-btn button" asp-controller="Order" asp-action="Checkout">Checkout</a>
                         </td>
                     </tr>
                 </tfoot>

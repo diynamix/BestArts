@@ -5,7 +5,7 @@
 
     public interface ICartService
     {
-        Task<IEnumerable<AllCartsViewModel>> AllCartsAsync();
+        Task<IEnumerable<AllCartsViewModel>> AllCartsAsync(string userid);
 
         Task<bool> IsAlreadyAddedAsync(string userId, string productId);
 

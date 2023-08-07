@@ -1,6 +1,7 @@
 ﻿namespace BestArts.Web.Controllers
 {
     using BestArts.Services.Data;
+    using BestArts.Web.Infrastructure.Extensions;
     using BestArts.Web.ViewModels.Product;
     using Microsoft.AspNetCore.Mvc;
 
@@ -23,7 +24,7 @@
 
         public async Task<IActionResult> All()
         {
-            IEnumerable<AllCartsViewModel> viewModel = await cartService.AllCartsAsync();
+            IEnumerable<AllCartsViewModel> viewModel = await cartService.AllCartsAsync(User.GetId()!);
 
             return View(viewModel);
         }

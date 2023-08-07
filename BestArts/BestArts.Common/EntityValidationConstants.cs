@@ -47,6 +47,12 @@
             public const string PriceMaxValue = "2000";
         }
 
+        public static class Order
+        {
+            public const int AddressMinLength = 10;
+            public const int AddressMaxLength = 500;
+        }
+
         public static class User
         {
             public const int UserNameMaxLength = 30;

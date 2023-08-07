@@ -2,8 +2,6 @@
 
 table {
     margin: 0 auto;
-    /*background-color: #f2edef;
-    border: 1px solid #C08497;*/
     border-spacing: 20px 10px;
     border-collapse: collapse;
 }
@@ -17,9 +15,9 @@ td {
     padding: 12px 0;
 }
 
-td:not(:last-child) {
-    padding-right: 18px;
-}
+    td:not(:last-child) {
+        padding-right: 18px;
+    }
 
 tr {
     border-bottom: 1px solid #C08497;
@@ -45,9 +43,7 @@ tr {
 
 .product-name {
     color: #C08497;
-    /*font-size: 20px;*/
     font-weight: 700;
-    /*letter-spacing: 1px;*/
 }
 
 .product-size {
@@ -56,21 +52,18 @@ tr {
 
 .product-price {
     text-align: end;
-    /*font-size: 20px;
-    font-weight: 400;*/
 }
 
 .product-quantity form div {
     display: inline-block;
 }
 
-    .product-quantity input {
-        /*display: inline;*/
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        margin: 0 10px 0 0;
-    }
+.product-quantity input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
 
 
 /* Product-btns */
@@ -78,8 +71,16 @@ tr {
     margin: 0 0 4px 0;
 }
 
-    .product-btns a {
-        display: block;
+.product-btns a {
+    display: block;
+}
+
+.checkout-btn {
+    background-color: #e8cad3;
+}
+
+    .checkout-btn:hover {
+        background-color: #e0a2b2;
     }
 
 } /* ********** RESPONSIVE ********** */

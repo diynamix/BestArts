@@ -8,6 +8,7 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject IWishlistService WishlistService
+@inject ICartService CartService
 
 @{
     ViewData["Title"] = "Product Details";
@@ -23,7 +24,7 @@
 }
 
 
-<div class="content-wrap">
+<div class="content-wrap product-details">
     <a class="add-btn" asp-controller="@(TempData["ReturnRage"] ?? "Product")" asp-action="All"
        asp-route-currentPage="@currentPage"
        asp-route-category="@category"
@@ -63,6 +64,11 @@
                         <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@Model.Id">
                             <input type="submit" value="Remove from Wishlist" class="wishlist-btn danger-btn button" />
                         </form>
+                    }
+                    else if ((User?.Identity?.IsAuthenticated ?? false) &&
+                    (await CartService.IsAlreadyAddedAsync(User.GetId()!, Model.Id)))
+                    {
+                        <input type="submit" value="Added to basket" class="wishlist-btn green-btn-disabled button" disabled="disabled" />
                     }
                     else
                     {
