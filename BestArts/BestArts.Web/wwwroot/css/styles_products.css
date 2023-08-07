@@ -73,6 +73,10 @@
     margin-bottom: 16px;
 }
 
+.product-btns form {
+    width: 100%;
+}
+
 .wishlist-btn {
     width: 100%;
 }
@@ -155,7 +159,7 @@ input, textarea, select {
 }
 
     .btn-arrow:hover, .page-number:hover {
-        color: #6b6b6b;
+        color: #6B6B6B;
     }
 
 .page-number {
@@ -167,12 +171,12 @@ input, textarea, select {
     }
 
 .link-disabled {
-    color: #adadad;
+    color: #ADADAD;
     pointer-events: none;
 }
 
 .current-page {
-    color: #6b6b6b;
+    color: #6B6B6B;
     text-decoration: underline;
 }
 

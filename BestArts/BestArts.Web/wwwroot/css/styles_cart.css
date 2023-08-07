@@ -1,0 +1,85 @@
+/* ********** CART ********** */
+
+table {
+    margin: 0 auto;
+    /*background-color: #f2edef;
+    border: 1px solid #C08497;*/
+    border-spacing: 20px 10px;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {
+    padding: 12px 0;
+}
+
+td:not(:last-child) {
+    padding-right: 18px;
+}
+
+tr {
+    border-bottom: 1px solid #C08497;
+}
+
+
+/* .product-box-table
+---------------------------------------------------------------------------*/
+/* .product-info */
+.product-info {
+}
+
+/* Product-img */
+.product-img {
+}
+
+    .product-img img {
+        width: 100px;
+        aspect-ratio: 3 / 2.5;
+        vertical-align: bottom;
+        object-fit: cover;
+    }
+
+.product-name {
+    color: #C08497;
+    /*font-size: 20px;*/
+    font-weight: 700;
+    /*letter-spacing: 1px;*/
+}
+
+.product-size {
+    font-size: 16px;
+}
+
+.product-price {
+    text-align: end;
+    /*font-size: 20px;
+    font-weight: 400;*/
+}
+
+.product-quantity form div {
+    display: inline-block;
+}
+
+    .product-quantity input {
+        /*display: inline;*/
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        margin: 0 10px 0 0;
+    }
+
+
+/* Product-btns */
+.update-btn {
+    margin: 0 0 4px 0;
+}
+
+    .product-btns a {
+        display: block;
+    }
+
+} /* ********** RESPONSIVE ********** */

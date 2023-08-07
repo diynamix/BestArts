@@ -1,0 +1,38 @@
+﻿@model DeleteCartProductViewModel
+
+@using BestArts.Web.Infrastructure.Extensions
+
+@{
+    ViewBag.Title = "Remove Product";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_product_details.css" asp-append-version="true" />
+        }
+
+<div class="content-wrap">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <div class="product-box">
+        <div class="product-img">
+            <img src="~/img/handmade/@Model.ImageUrl" alt="Product Image" />
+        </div>
+        <div class="product-info">
+            <div class="product-name">
+                @Model.Name
+            </div>
+            <div class="product-size">
+                @Model.Width.ToString("0.#") x @Model.Height.ToString("0.#") cm
+            </div>
+            <br />
+            Are you sure you want to remove this product from basket?
+            <div class="product-btns">
+                <br />
+                <a asp-controller="Cart" asp-action="All" class="edit-btn button">Cancel</a>
+                <form method="post" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-userId="@User.GetId()" asp-route-productId="@Model.Id">
+                    <input type="submit" value="Remove" class="delete-btn button" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

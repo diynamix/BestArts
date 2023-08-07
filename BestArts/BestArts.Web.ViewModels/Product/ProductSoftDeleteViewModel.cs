@@ -12,7 +12,6 @@ using System.ComponentModel.DataAnnotations;
         public string ImageUrl { get; set; } = null!;
 
         [Display(Name = "Category")]
-
         public string CategoryName { get; set; } = null!;
     }
 }

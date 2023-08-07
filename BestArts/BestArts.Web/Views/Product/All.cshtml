@@ -8,6 +8,7 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject IWishlistService WishlistService
+@inject ICartService CartService
 
 
 @{
@@ -178,8 +179,13 @@
                                 (await WishlistService.IsAlreadyAddedAsync(User.GetId()!, product.Id)))
                             {
                                 <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
-                                    <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
+                                    <input type="submit" value="Remove from Wishlist" class="wishlist-btn danger-btn button" />
                                 </form>
+                            }
+                            else if ((User?.Identity?.IsAuthenticated ?? false) &&
+                                (await CartService.IsAlreadyAddedAsync(User.GetId()!, product.Id)))
+                            {
+                                <input type="submit" value="Added to basket" class="wishlist-btn green-btn-disabled button" disabled="disabled" />
                             }
                             else
                             {

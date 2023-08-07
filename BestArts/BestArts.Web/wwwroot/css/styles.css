@@ -53,14 +53,20 @@ button, .button {
 
 .green-btn {
     background-color: #C1E8E8;
-    background-color: #DFF2F2;
+    /*background-color: #DFF2F2;*/
     border-color: #87ACB0;
 }
 
     .green-btn:hover {
         background-color: #20B2AA;
-        background-color: #6DD6D6;
+        /*background-color: #6DD6D6;*/
     }
+
+.green-btn-disabled {
+    background-color: #F2F0F0;
+    border-color: #87ACB0;
+    cursor: default;
+}
 
 .danger-btn {
     background-color: #FFCCCB;

@@ -24,7 +24,7 @@
 }
 
 @section css {
-        <link rel="stylesheet" href="~/css/styles_products.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles_products.css" asp-append-version="true" />
 }
 
 
@@ -50,7 +50,7 @@
                         <option value="">All</option>
                         @foreach (var category in Model.Categories)
                         {
-                                <option value="@category">@category</option>
+                            <option value="@category">@category</option>
                         }
                     </select>
                 </div>
@@ -96,7 +96,7 @@
             <div class="pagination-pages">
                 @for (int i = 1; i <= maxPage; i++)
                 {
-                        <a class="page-number @(Model.CurrentPage == i ? "link-disabled current-page" : string.Empty)"
+                    <a class="page-number @(Model.CurrentPage == i ? "link-disabled current-page" : string.Empty)"
                    asp-controller="Wishlist"
                    asp-action="All"
                    asp-route-currentPage="@i"
@@ -125,45 +125,49 @@
 
     @if (!products.Any())
     {
-            <span>
-                You have not placed any products in your wishlist yet!
-            </span>
+        <span>
+            You have not placed any products in your wishlist yet!
+        </span>
     }
     else
     {
-            <section class="product-list">
+        <section class="product-list">
             @foreach (var product in products)
             {
                 @*<partial name="_ProductPartial" model="@product" />*@
-                        <div class="product-box">
-                            <div class="product-img">
-                                <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
-                                    <img src="~/img/handmade/@product.ImageUrl" alt="Product Image" />
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-name">
-                                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
+                <div class="product-box">
+                    <div class="product-img">
+                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
+                            <img src="~/img/handmade/@product.ImageUrl" alt="Product Image" />
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">
+                            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
                                 @product.Name
-                                    </a>
-                                </div>
-                                <div class="product-type">
-                            @product.CategoryName
-                                </div>
-                                <div class="product-size">
-                            @product.Width.ToString("0.#") x @product.Height.ToString("0.#") cm
-                                </div>
-                                <div class="product-price">
-                            @product.Price BGN
-                                </div>
-                            </div>
-                            <div class="product-btns">                        
-                                <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
-                                    <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
-                                </form>
-                            </div>
+                            </a>
                         </div>
+                        <div class="product-type">
+                            @product.CategoryName
+                        </div>
+                        <div class="product-size">
+                            @product.Width.ToString("0.#") x @product.Height.ToString("0.#") cm
+                        </div>
+                        <div class="product-price">
+                            @product.Price BGN
+                        </div>
+                    </div>
+                    <div class="product-btns">
+                        <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
+                            <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
+                        </form>
+
+                        <form method="post" asp-controller="Cart" asp-action="AddToCart" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
+                            <input type="submit" value="Add to basket" class="wishlist-btn green-btn button" />
+                        </form>
+                    </div>
+                </div>
             }
-            </section>
+        </section>
     }
 </div>

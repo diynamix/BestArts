@@ -35,7 +35,7 @@
         public static class Cart
         {
             public const string QuantityMinValue = "1";
-            public const string QuantityMaxValue = "20";
+            public const string QuantityMaxValue = "10";
         }
 
         public static class OrderItem

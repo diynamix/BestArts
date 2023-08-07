@@ -17,9 +17,18 @@
             this.categoryService = categoryService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> All()
         {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("All", "Product");
+            }
+
             IEnumerable<AllCategoriesViewModel> viewModel = await categoryService.AllCategoriesAsync();
+
             return View(viewModel);
         }
 
@@ -84,6 +93,12 @@
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+                return RedirectToAction("Index", "Home");
+            }
+
             bool categoryExists = await categoryService.ExistsByIdAsync(int.Parse(id));
 
             if (!categoryExists)
@@ -91,12 +106,6 @@
                 TempData[ErrorMessage] = "The category does not exist!";
 
                 return RedirectToAction("All", "Product");
-            }
-
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-                return RedirectToAction("Index", "Home");
             }
 
             try
@@ -114,6 +123,13 @@
         [HttpPost]
         public async Task<IActionResult> Edit(string id, CategoryFormModel model)
         {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -126,13 +142,6 @@
                 TempData[ErrorMessage] = "The category does not exist!";
 
                 return RedirectToAction("All", "Product");
-            }
-
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
             }
 
             try

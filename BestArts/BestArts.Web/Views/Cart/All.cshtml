@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AllCartsViewModel>
+
+@using Microsoft.AspNetCore.Identity;
+@using BestArts.Data.Models
+@using BestArts.Services.Data.Interfaces
+@using BestArts.Web.Infrastructure.Extensions
+
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Basket";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_cart.css" asp-append-version="true" />
+}
+
+<div class="content-wrap cart">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    @if (!Model.Any())
+    {
+        <span>
+            There are no products in your basket yet.
+        </span>
+    }
+    else
+    {
+        <section class="cart">
+            <table>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <partial name="_CartPartial" model="@product" />
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">
+                            <a class="checkout-btn button">Checkout</a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

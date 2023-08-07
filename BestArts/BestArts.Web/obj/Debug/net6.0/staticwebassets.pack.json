@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_cart.css",
+      "PackagePath": "staticwebassets\\css\\styles_cart.css"
+    },
+    {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_categories.css",
       "PackagePath": "staticwebassets\\css\\styles_categories.css"
     },

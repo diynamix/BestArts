@@ -120,6 +120,13 @@
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
             bool productExists = await productService.ExistsByIdAsync(id);
 
             if (!productExists)
@@ -127,13 +134,6 @@
                 TempData[ErrorMessage] = "The product does not exist!";
 
                 return RedirectToAction("All", "Product");
-            }
-
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
             }
 
             try
@@ -154,6 +154,13 @@
         [HttpPost]
         public async Task<IActionResult> Edit(string id, ProductFormModel model)
         {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
             if (!ModelState.IsValid)
             {
                 model.Categories = await categoryService.AllCategoriesForProductSelectFormModelAsync();
@@ -168,13 +175,6 @@
                 TempData[ErrorMessage] = "The product does not exist!";
 
                 return RedirectToAction("All", "Product");
-            }
-
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
             }
 
             try
@@ -197,6 +197,13 @@
         [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
             bool productExists = await productService.ExistsByIdAsync(id);
 
             if (!productExists)
@@ -204,13 +211,6 @@
                 TempData[ErrorMessage] = "The product does not exist!";
 
                 return RedirectToAction("All", "Product");
-            }
-
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
             }
 
             try
@@ -229,6 +229,13 @@
         [HttpPost]
         public async Task<IActionResult> Delete(string id, ProductSoftDeleteViewModel model)
         {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
             bool productExists = await productService.ExistsByIdAsync(id);
 
             if (!productExists)
@@ -236,13 +243,6 @@
                 TempData[ErrorMessage] = "The product does not exist!";
 
                 return RedirectToAction("All", "Product");
-            }
-
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
             }
 
             try
@@ -330,7 +330,7 @@
                 return GeneralError();
             }
 
-            return RedirectToAction("All", TempData["ReturnPage"]?.ToString() ?? "Product", new
+            return RedirectToAction("All", "Product", new
             {
                 currentPage = TempData.Peek("CurrentPage"),
                 categorySort = TempData.Peek("Category"),
@@ -340,8 +340,15 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> RemoveFromWishlist(string userid, string productId, string? wishlist)
+        public async Task<IActionResult> RemoveFromWishlist(string userid, string productId)
         {
+            if (User?.Identity?.IsAuthenticated == false)
+            {
+                TempData[ErrorMessage] = "You need to login first!";
+
+                return RedirectToAction("Login", "User");
+            }
+
             bool productExists = await productService.ExistsByIdAsync(productId);
 
             if (!productExists)

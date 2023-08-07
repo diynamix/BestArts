@@ -45,3 +45,11 @@ function showNav() {
         navDropCount--;
     }
 }
+
+// ***************************************************************
+
+//let inputs = Array.from(document.querySelectorAll('input'));
+//inputs.map(i => i.addEventListener('click', preventDefault));
+
+//function preventDefault(e) {
+//}

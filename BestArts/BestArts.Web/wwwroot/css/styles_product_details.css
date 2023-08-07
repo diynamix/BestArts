@@ -51,7 +51,11 @@
 }
 
 /* Product-btns */
-.product-btns, form {
+.product-btns {
+    display: block;
+}
+
+form {
     display: inline-block;
 }
 
