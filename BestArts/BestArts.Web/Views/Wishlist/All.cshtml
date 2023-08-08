@@ -1,14 +1,6 @@
 ﻿@model AllProductsQueryModel
 
-@using Microsoft.AspNetCore.Identity;
-@using BestArts.Data.Models
-@using BestArts.Services.Data.Interfaces
 @using BestArts.Web.Infrastructure.Extensions
-
-
-@inject SignInManager<ApplicationUser> SignInManager
-@inject UserManager<ApplicationUser> UserManager
-@inject IWishlistService WishlistService
 
 @{
     ViewData["Title"] = "Wishlist";
@@ -134,29 +126,9 @@
         <section class="product-list">
             @foreach (var product in products)
             {
-                @*<partial name="_ProductPartial" model="@product" />*@
                 <div class="product-box">
-                    <div class="product-img">
-                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
-                            <img src="~/img/handmade/@product.ImageUrl" alt="Product Image" />
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">
-                            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
-                                @product.Name
-                            </a>
-                        </div>
-                        <div class="product-type">
-                            @product.CategoryName
-                        </div>
-                        <div class="product-size">
-                            @product.Width.ToString("0.#") x @product.Height.ToString("0.#") cm
-                        </div>
-                        <div class="product-price">
-                            @product.Price BGN
-                        </div>
-                    </div>
+                    <partial name="_ProductPartial" model="@product" />
+
                     <div class="product-btns">
                         <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
                             <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
