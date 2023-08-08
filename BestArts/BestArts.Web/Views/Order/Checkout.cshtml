@@ -22,62 +22,75 @@
 <div class="content-wrap checkout">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
-    <section class="cart-info">
-        <div>
-            Order Information
-        </div>
-        <br />
-        <div class="subtotal-price">
-            Subtotal price: @($"{Model.SubTotalPrice:f2}") BGN
-        </div>
-        <div>
-            VAT (@($"{vatPercentage:f2}") &#37;): @($"{Model.VAT:f2}") BGN
-        </div>
-        <div>
-            Shipping: @($"{Model.ShippingPrice:f2}") BGN
-        </div>
-        <br />
-        <div>
-            Grand total: @($"{Model.GrandTotalPrice:f2}") BGN
-        </div>
-    </section>
-    <br />
-    <section class="address-form">
-        <form class="product-form" method="post"
-              asp-controller="Order"
-              asp-action="Checkout"
-              asp-route-userId="@User.GetId()"
-              asp-route-subTotalPrice="@Model.SubTotalPrice"
-              asp-route-VAT="@Model.VAT"
-              asp-route-shippingPrice="@Model.ShippingPrice"
-              asp-route-grandTotalPrice="@Model.GrandTotalPrice">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div>
 
-            <div class="form-group">
-                <label asp-for="CustomerName" class="required"></label>
-                <input asp-for="CustomerName" placeholder="Type delivery address..." aria-required="true" min="3" max="100" />
-                <span asp-validation-for="CustomerName" class="text-danger"></span>
+        <section class="cart-info divider">
+            <div class="order-info">
+                Order Information
             </div>
-            <br />
-            <div class="form-group">
-                <label asp-for="ShippingAddress" class="required"></label>
-                <input asp-for="ShippingAddress" placeholder="Type delivery address..." aria-required="true" min="10" max="500" />
-                <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+            <div class="subtotal-price">
+                Subtotal price:
+                <span class="price">@($"{Model.SubTotalPrice:f2}") BGN</span>
             </div>
-            <br />
-            <div class="form-group">
-                <div class="checkbox">
-                    <label asp-for="AcceptTerms" class="form-label">
-                        <input class="form-check-input" asp-for="AcceptTerms" />
-                        I understand this is a fictive order (For Educational Purposes ONLY) and I won't be charged.
-                    </label>
+            <div class="vat-price">
+                VAT (@($"{vatPercentage:f2}") &#37;):
+                <span class="price">@($"{Model.VAT:f2}") BGN</span>
+            </div>
+            <div class="shipping-price">
+                Shipping cost:
+                <span class="price">@($"{Model.ShippingPrice:f2}") BGN</span>
+            </div>
+            <div class="grandtotal-price">
+                Grand total:
+                <span class="price">@($"{Model.GrandTotalPrice:f2}") BGN</span>
+            </div>
+        </section>
+
+        <section class="address-form">
+            <div class="order-info">
+                Delivery Information
+            </div>
+            <form class="product-form" method="post"
+                  asp-controller="Order"
+                  asp-action="Checkout"
+                  asp-route-subTotalPrice="@Model.SubTotalPrice"
+                  asp-route-VAT="@Model.VAT"
+                  asp-route-shippingPrice="@Model.ShippingPrice"
+                  asp-route-grandTotalPrice="@Model.GrandTotalPrice">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                @*<div class="form-group">
+                <label asp-for="SubTotalPrice"></label>
+                <input asp-for="SubTotalPrice" disabled="disabled" />
+                </div>*@
+
+                <div class="form-group">
+                    <label asp-for="CustomerName" class="required"></label>
+                    <input asp-for="CustomerName" placeholder="John Smith" aria-required="true" min="3" max="100" />
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
                 </div>
-            </div>
-            <br />
-            <div>
-                <button class="update-btn green-btn button" type="submit">Place order</button>
-            </div>
-        </form>
+                
+                <div class="form-group">
+                    <label asp-for="ShippingAddress" class="required"></label>
+                    <textarea class="input" name="ShippingAddress" cols="30" rows="15" placeholder="Delivery address..." min="10" max="500"></textarea>
+                    <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+                </div>
 
-    </section>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="AcceptTerms" class="form-label">
+                            <input class="form-check-input" asp-for="AcceptTerms" />
+                            I understand this is a fictive order (For Educational Purposes ONLY) and I won't be charged.
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="update-btn green-btn button" type="submit">Place order</button>
+                </div>
+            </form>
+        </section>
+
+    </div>
 </div>

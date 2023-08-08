@@ -50,6 +50,11 @@
         [HttpPost]
         public async Task<IActionResult> Checkout(OrderFormModel formModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(formModel);
+            }
+
             //TODO...
             return RedirectToAction("All", "Product");
         }

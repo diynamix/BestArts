@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\styles_categories.css"
     },
     {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_checkout.css",
+      "PackagePath": "staticwebassets\\css\\styles_checkout.css"
+    },
+    {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_error.css",
       "PackagePath": "staticwebassets\\css\\styles_error.css"
     },

@@ -1,0 +1,45 @@
+/* Main
+.................................................. */
+.cart-info {
+    margin: 0 0 24px 0;
+}
+
+.order-info {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-decoration: underline;
+    margin: 0 0 12px 0;
+}
+
+.shipping-price {
+    margin: 0 0 12px 0;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.form-group {
+    margin: 0 0 12px 0;
+}
+
+input, textarea, select {
+    font-size: 16px;
+    padding: 4px;
+    background-color: #f7f7f7;
+    border: 1.4px solid black;
+    border-radius: 4px;
+}
+
+.form-group > * {
+    display: block;
+}
+
+.required::after {
+    content: " \002A";
+    color: #C08497;
+}
+
+
+/* Responsive
+-------------------------------------------------- */

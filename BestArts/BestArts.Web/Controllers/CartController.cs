@@ -171,6 +171,8 @@
 
             if (!ModelState.IsValid)
             {
+                TempData[ErrorMessage] = "Invalid quantity entered!";
+
                 return RedirectToAction("All", "Cart");
             }
 
