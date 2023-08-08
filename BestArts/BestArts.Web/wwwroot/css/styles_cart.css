@@ -19,8 +19,29 @@ td {
         padding-right: 18px;
     }
 
-tr {
+tbody tr {
     border-bottom: 1px solid #C08497;
+}
+
+/* For Order Details */
+.order-details tbody tr:last-child {
+    border-bottom: none;
+}
+
+.order-info:first-child, .order-items {
+    margin: 0 0 24px 0;
+}
+
+.order-info:last-child {
+    text-align: right;
+}
+
+.info {
+    font-weight: 500;
+}
+
+.order-date, .shipping-price {
+    margin: 0 0 12px 0;
 }
 
 
@@ -42,12 +63,12 @@ tr {
     }
 
 .product-name {
-    color: #C08497;
-    font-weight: 700;
+    /*color: #C08497;*/
+    /*font-weight: 700;*/
 }
 
 .product-size {
-    font-size: 16px;
+    /*font-size: 0.8rem;*/
 }
 
 .product-price {

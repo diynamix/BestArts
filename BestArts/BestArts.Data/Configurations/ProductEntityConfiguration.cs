@@ -25,10 +25,6 @@
                 .Property(p => p.Price)
                 .HasPrecision(18, 2);
 
-            //builder
-            //    .Property(p => p.DiscountedPrice)
-            //    .HasPrecision(18, 2);
-
             builder
                 .HasOne(p => p.Category)
                 .WithMany(c => c.Products)

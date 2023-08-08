@@ -56,6 +56,14 @@
         [Required]
         public decimal GrandTotalPrice { get; set; }
 
+        [Comment("Payment method")]
+        [Required]
+        public PaymentMethod PaymentMethod { get; set; }
+
+        [Comment("Are terms accepted")]
+        [Required]
+        public bool TermsAccepted { get; set; }
+
         public ICollection<OrderItem> OrderItems { get; set; } = null!;
     }
 }

@@ -1,0 +1,76 @@
+﻿@model AllOrdersQueryModel
+
+@using Microsoft.AspNetCore.Identity;
+@using BestArts.Data.Models
+@using BestArts.Services.Data.Interfaces
+@using BestArts.Web.Infrastructure.Extensions
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject IWishlistService WishlistService
+@inject ICartService CartService
+
+
+@{
+    ViewData["Title"] = "Orders";
+
+    var orders = Model.Orders.ToList();
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_products.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles_orders.css" asp-append-version="true" />
+}
+
+
+<div class="content-wrap handmade">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <section class="filter-section">
+        <form class="filter-form" method="get">
+            <div>
+                <div class="form-group">
+                    <label asp-for="OrderSorting"></label>
+                    <select asp-for="OrderSorting" class="form-control">
+                        <option value="0">Newest</option>
+                        <option value="1">Oldest</option>
+                        <option value="2">Price (Ascending)</option>
+                        <option value="3">Price (Descending)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="OrderStatus"></label>
+                    <select asp-for="OrderStatus">
+                        <option value="-1">All</option>
+                        <option value="0">InProgress</option>
+                        <option value="1">Sent</option>
+                        <option value="2">Delivered</option>
+                        <option value="3">Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Search" class="search-btn" />
+                </div>
+            </div>
+        </form>
+    </section>
+
+    @if (!orders.Any())
+    {
+        <span>
+            There are no orders at the minute.
+        </span>
+    }
+    else
+    {
+        <section class="order-list">
+
+            @foreach (var order in orders)
+            {
+                <partial name="_OrderPartial" model="@order" />
+            }
+        </section>
+    }
+</div>

@@ -1,0 +1,14 @@
+.logout {
+    margin: 0 0 32px 0;
+}
+
+.logout button:hover {
+    background: #FFFFFF;
+}
+
+.order-info-header {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-decoration: underline;
+    margin: 0 0 12px 0;
+}

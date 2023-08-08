@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nxkQjPyhjcn2R6w6S930Y9eov0mWFP8Gftc9g4jZgo0=",
+  "Hash": "Gza7FuacQwZDF/wZCkx4DCAa2NQkFo5Z9xVNfglRWJE=",
   "Source": "BestArts.Web",
   "BasePath": "_content/BestArts.Web",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
+      "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_account.css",
+      "SourceId": "BestArts.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\",
+      "BasePath": "_content/BestArts.Web",
+      "RelativePath": "css/styles_account.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles_account.css"
+    },
+    {
       "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_cart.css",
       "SourceId": "BestArts.Web",
       "SourceType": "Discovered",
@@ -1188,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles_home.css"
+    },
+    {
+      "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_orders.css",
+      "SourceId": "BestArts.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\",
+      "BasePath": "_content/BestArts.Web",
+      "RelativePath": "css/styles_orders.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles_orders.css"
     },
     {
       "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_product_details.css",

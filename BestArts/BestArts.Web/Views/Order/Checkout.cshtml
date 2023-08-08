@@ -66,11 +66,18 @@
                 </div>*@
 
                 <div class="form-group">
+                    <label asp-for="PaymentMethod"></label>
+                    <select asp-for="PaymentMethod">
+                        <option value="0">Courier Payment</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label asp-for="CustomerName" class="required"></label>
                     <input asp-for="CustomerName" placeholder="John Smith" aria-required="true" min="3" max="100" />
                     <span asp-validation-for="CustomerName" class="text-danger"></span>
                 </div>
-                
+
                 <div class="form-group">
                     <label asp-for="ShippingAddress" class="required"></label>
                     <textarea class="input" name="ShippingAddress" cols="30" rows="15" placeholder="Delivery address..." min="10" max="500"></textarea>
@@ -79,8 +86,8 @@
 
                 <div class="form-group">
                     <div class="checkbox">
-                        <label asp-for="AcceptTerms" class="form-label">
-                            <input class="form-check-input" asp-for="AcceptTerms" />
+                        <label asp-for="TermsAccepted" class="form-label">
+                            <input class="form-check-input" asp-for="TermsAccepted" />
                             I understand this is a fictive order (For Educational Purposes ONLY) and I won't be charged.
                         </label>
                     </div>

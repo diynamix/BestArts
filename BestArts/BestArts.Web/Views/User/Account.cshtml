@@ -1,4 +1,6 @@
-﻿@using BestArts.Services.Data.Interfaces
+﻿@model IEnumerable<OrderAllViewModel>
+
+@using BestArts.Services.Data.Interfaces
 @using BestArts.Web.Infrastructure.Extensions
 
 @inject IUserService userService
@@ -7,12 +9,29 @@
     ViewData["Title"] = await userService.GetFullNameByEmailAsync(User.Identity?.Name!);
 }
 
+@section css {
+    <link rel="stylesheet" href="~/css/styles_account.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles_orders.css" asp-append-version="true" />
+}
+
+
 <div class="content-wrap account">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
-    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-        <button type="submit" class="btn-unset">Logout</button>
-    </form>
+    <div class="logout">
+        <form class="logout-form" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="button">Logout</button>
+        </form>
+    </div>
+
+    <div class="orders">
+        <div class="order-info-header">My orders</div>
+
+        @foreach (var order in Model)
+        {
+            <partial name="_OrderPartial" model="@order" />
+        }
+    </div>
 </div>
 
 @section Scripts {

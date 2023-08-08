@@ -50,10 +50,6 @@
         [Required]
         public decimal Price { get; set; }
 
-        //[Comment("Product discounted price")]
-        //[Required]
-        //public decimal? DiscountedPrice { get; set; }
-
         [Comment("Date and time created on")]
         [Required]
         public DateTime CreatedOn { get; set; }

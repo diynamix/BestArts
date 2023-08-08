@@ -2,6 +2,7 @@
 .................................................. */
 html {
     box-sizing: border-box;
+    font-size: 18px;
 }
 
 *, *:before, *:after {
@@ -28,7 +29,7 @@ body {
 button, .button {
     /*all: unset;*/
     color: #000000;
-    font-size: 18px;
+    font-size: 0.9rem;
     font-family: Dubai;
     cursor: pointer;
     border: 1px solid;
@@ -98,7 +99,7 @@ button, .button {
 /* Header
 .................................................. */
 header {
-    font-size: 22px;
+    font-size: 1.15rem;
     color: #E8E8E8;
     line-height: 1;
     background-color: #5D4A1F;
@@ -122,7 +123,7 @@ header {
 }
 
 h1 {
-    font-size: 44px;
+    font-size: 2.5rem;
     font-family: 'Rancho', cursive;
     font-weight: 400;
     color: #D1B464;
@@ -176,14 +177,14 @@ nav a {
 /* Main
 .................................................. */
 main {
-    font-size: 20px;
+    font-size: 1rem;
     background-color: #F2F0F0;
     /* to keep footer at the bottom (also code in body) */
     flex-grow: 1;
 }
 
     main h2 {
-        font-size: 32px;
+        font-size: 1.6rem;
         color: #C08497;
         letter-spacing: 2px;
         text-align: center;
@@ -195,7 +196,7 @@ main {
         letter-spacing: 1px;
     }
 
-.handmade h2, .contacts h2, .login h2, .register h2, .all-categories h2, .checkout h2 {
+.handmade h2, .contacts h2, .product-details h2, .login h2, .register h2, .account h2, .all-categories h2, .checkout h2 {
     color: #87ACB0;
 }
 
@@ -211,7 +212,7 @@ footer {
     }
 
     footer span {
-        font-size: 18px;
+        font-size: 1rem;
         font-weight: 500;
         display: inline-block;
     }
@@ -231,6 +232,10 @@ footer {
 /* Responsive
 -------------------------------------------------- */
 @media screen and (max-width: 900px) {
+    header {
+        font-size: 1.1rem;
+    }
+
     #logo {
         display: block;
         position: static;
@@ -258,7 +263,6 @@ footer {
 @media screen and (max-width: 670px) {
 
     /* ********** NAVIGATION ********** */
-
     #logo {
         display: flex;
         text-align: left;

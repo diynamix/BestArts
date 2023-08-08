@@ -6,6 +6,8 @@
     using Microsoft.AspNetCore.Mvc;
 
     using Data.Models;
+    using Infrastructure.Extensions;
+    using Services.Data.Interfaces;
     using ViewModels.User;
 
     using static Common.NotificationMessagesConstants;
@@ -14,12 +16,15 @@
     {
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IOrderService orderService;
 
         public UserController(SignInManager<ApplicationUser> signInManager,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            IOrderService orderService)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
+            this.orderService = orderService;
         }
 
         [AllowAnonymous]
@@ -118,9 +123,11 @@
 
         }
 
-        public IActionResult Account()
+        public async Task<IActionResult> Account()
         {
-            return View();
+            var userOrders = await orderService.GetAllOrdersByUserIdAsync(User.GetId()!);
+
+            return View(userOrders);
         }
     }
 }

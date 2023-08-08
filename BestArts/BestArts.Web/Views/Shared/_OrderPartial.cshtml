@@ -1,0 +1,29 @@
+﻿@model OrderAllViewModel
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_orders.css" asp-append-version="true" />
+}
+
+<div class="order divider">
+    <a asp-controller="Order" asp-action="Details" asp-route-orderId="@Model.Id">
+        <div class="order-id">
+            Order Id: <span>@Model.Id</span>
+        </div>
+        <div class="order-info">
+            <div class="order-status">
+                Status: <span>@Model.OrderStatus</span>
+            </div>
+            <div class="order-date">
+                Date: <span>@Model.CreatedOn</span>
+            </div>
+        </div>
+        <div class="order-info">
+            <div class="order-price">
+                Price: <span>@Model.GrandTotalPrice BGN</span>
+            </div>
+            <div class="order-payment">
+                Payment: <span>@Model.PaymentMethod</span>
+            </div>
+        </div>
+    </a>
+</div>

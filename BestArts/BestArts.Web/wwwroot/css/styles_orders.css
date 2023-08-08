@@ -1,0 +1,26 @@
+.order {
+    font-size: 16px;
+}
+
+.order a {
+    color: #000000;
+    text-decoration: none;
+}
+
+    .order:hover {
+        color: #C08497;
+        background: #FFFFFF;
+        border: 1px solid #C08497;
+        border-radius: 4px;
+    }
+
+.order span {
+    font-weight: 500;
+}
+
+.order:not(:last-child) {
+    margin: 0 0 16px 0;
+}
+
+.order-info {
+}

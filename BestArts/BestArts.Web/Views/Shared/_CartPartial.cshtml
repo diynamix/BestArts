@@ -48,10 +48,5 @@
         <form method="post" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-userId="@User.GetId()" asp-route-productId="@Model.ProductId">
             <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
         </form>
-        @*<a class="delete-btn danger-btn button"
-           asp-controller="Cart"
-           asp-action="Delete"
-           asp-route-userId="@User.GetId()"
-           asp-route-productId="@Model.ProductId">Remove</a>*@
     </td>
 </tr>

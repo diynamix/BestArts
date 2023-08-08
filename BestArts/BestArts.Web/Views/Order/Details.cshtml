@@ -1,0 +1,103 @@
+﻿@model OrderDetailsViewModel
+
+@using Microsoft.AspNetCore.Identity;
+@using BestArts.Data.Models
+@using BestArts.Web.Infrastructure.Extensions
+@using BestArts.Services.Data.Interfaces
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject IWishlistService WishlistService
+@inject ICartService CartService
+
+@using static BestArts.Common.GeneralApplicationConstants;
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/styles_cart.css" asp-append-version="true" />
+}
+
+<div class="content-wrap order-details">
+    <a class="add-btn" asp-controller="User" asp-action="Account">&lt;&lt;Back</a>
+
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <div>
+
+        <section class="order-info divider">
+            <div class="order-id">
+                <span class="info">Order Id:</span>
+                @Model.Id
+            </div>
+            <div class="order-date">
+                <span class="info">Date:</span>
+                @Model.CreatedOn
+            </div>
+            <div class="order-status">
+                <span class="info">Status:</span>
+                @Model.OrderStatus
+            </div>
+            <div class="order-payment">
+                <span class="info">Payment:</span>
+                @Model.PaymentMethod
+            </div>
+            <div class="shipping-address">
+                <span class="info">Address:</span>
+                @Model.ShippingAddress
+            </div>
+
+        </section>
+
+        <section class="order-items divider">
+            <table>
+                <tbody>
+                    @foreach (var orderItem in Model.OrderItems)
+                    {
+                        <tr class="product-box-table">
+                            <td class="product-img">
+                                <img src="~/img/handmade/@orderItem.ImageUrl" alt="Product Image" />
+                            </td>
+                            <td class="product-name">
+                                @orderItem.Name
+                            </td>
+                            <td class="product-size">
+                                @orderItem.Width.ToString("0.#") x @orderItem.Height.ToString("0.#") cm
+                            </td>
+                            <td class="product-price">
+                                @orderItem.SinglePrice BGN
+                            </td>
+                            <td class="product-quantity">
+                                x @orderItem.Quantity
+                            </td>
+                            <td class="total-quantity">
+                                @orderItem.TotalPrice BGN
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+
+        <section class="order-info">
+            <div class="subtotal-price">
+                Subtotal price:
+                <span class="info">@($"{Model.SubTotalPrice:f2}") BGN</span>
+            </div>
+            <div class="vat-price">
+                VAT (@($"{vatPercentage:f2}") &#37;):
+                <span class="info">@($"{Model.VAT:f2}") BGN</span>
+            </div>
+            <div class="shipping-price">
+                Shipping cost:
+                <span class="info">@($"{Model.ShippingPrice:f2}") BGN</span>
+            </div>
+            <div class="grandtotal-price">
+                Grand total:
+                <span class="info">@($"{Model.GrandTotalPrice:f2}") BGN</span>
+            </div>
+        </section>
+    </div>
+</div>
