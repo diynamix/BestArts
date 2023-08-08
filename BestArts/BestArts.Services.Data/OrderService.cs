@@ -63,14 +63,16 @@
             };
         }
 
-        public async Task ChangeOrderStatusByIdAsync(string orderId, int orderStatus)
+        public async Task UpdateOrderStatusByIdAsync(string orderId, OrderStatusFormModel formModel)
         {
             Order? order = await dbContext.Orders
                 .FirstOrDefaultAsync(o => o.Id.ToString() == orderId);
 
-            if (order != null && (int)order.OrderStatus != orderStatus)
+            int newOrderStatus = formModel.OrderStatus;
+
+            if (order != null && (int)order.OrderStatus != newOrderStatus)
             {
-                order.OrderStatus = (OrderStatusType)orderStatus;
+                order.OrderStatus = (OrderStatusType)newOrderStatus;
             }
 
             await dbContext.SaveChangesAsync();
@@ -169,6 +171,20 @@
             return orderDetails;
         }
 
+        public async Task<OrderStatusFormModel> GetOrderForUpdateByIdAsync(string orderId)
+        {
+            Order order = await dbContext.Orders
+                .FirstAsync(o => o.Id.ToString() == orderId);
+
+            OrderStatusFormModel formModel = new OrderStatusFormModel()
+            {
+                OrderId = order.Id.ToString(),
+                OrderStatusName = order.OrderStatus.ToString(),
+            };
+
+            return formModel;
+        }
+
         public async Task<IEnumerable<AllOrderItemsViewModel>> GetOrderItemsByOrderIdAsync(string orderId)
         {
             var orderItems = await dbContext.OrderItems
@@ -206,8 +222,16 @@
         public async Task<bool> IsUserOwnerAsync(string userId, string orderId)
         {
             bool isUserOwner = await dbContext.Orders
-            .AnyAsync(o => o.UserId.ToString() == userId &&
+                .AnyAsync(o => o.UserId.ToString() == userId &&
                             o.Id.ToString() == orderId);
+
+            return isUserOwner;
+        }
+
+        public async Task<bool> OrderExistsByIdAsync(string orderId)
+        {
+            bool isUserOwner = await dbContext.Orders
+                .AnyAsync(o => o.Id.ToString() == orderId);
 
             return isUserOwner;
         }

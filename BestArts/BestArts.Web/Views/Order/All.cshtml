@@ -4,6 +4,9 @@
     ViewData["Title"] = "Orders";
 
     var orders = Model.Orders.ToList();
+
+    TempData["OrderStatus"] = Model.OrderStatus;
+    TempData["OrderSorting"] = Model.OrderSorting;
 }
 
 @section css {

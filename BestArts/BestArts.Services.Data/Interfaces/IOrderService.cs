@@ -21,8 +21,12 @@
 
         Task<IEnumerable<AllOrderItemsViewModel>> GetOrderItemsByOrderIdAsync(string orderId);
 
-        Task ChangeOrderStatusByIdAsync(string orderId, int orderStatus);
+        Task UpdateOrderStatusByIdAsync(string orderId, OrderStatusFormModel formModel);
 
         Task<bool> IsUserOwnerAsync(string userId, string orderId);
+
+        Task<bool> OrderExistsByIdAsync(string orderId);
+
+        Task<OrderStatusFormModel> GetOrderForUpdateByIdAsync(string orderId);
     }
 }

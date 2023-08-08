@@ -1,15 +1,14 @@
 ﻿namespace BestArts.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
-
+    
     using Infrastructure.Extensions;
     using Services.Data.Interfaces;
     using Services.Data.Models.Order;
     using ViewModels.Order;
-    
+
     using static Common.GeneralApplicationConstants;
     using static Common.NotificationMessagesConstants;
-    using BestArts.Services.Data;
 
     public class OrderController : Controller
     {
@@ -127,63 +126,76 @@
             }
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Update()
-        //{
-        //    try
-        //    {
-        //        decimal subtotalPrice = await orderService.GetSubtotalPriceOfAllItemsForOrderAsync(User.GetId()!);
+        [HttpGet]
+        public async Task<IActionResult> Update(string orderId)
+        {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
 
-        //        decimal vatPrice = subtotalPrice * (vatPercentage / 100);
+                return RedirectToAction("Index", "Home");
+            }
 
-        //        decimal shippingPrice = standartShipping;
+            bool orderExists = await orderService.OrderExistsByIdAsync(orderId);
 
-        //        decimal grandTotalPrice = subtotalPrice + vatPrice + shippingPrice;
+            if (!orderExists)
+            {
+                TempData[ErrorMessage] = "The order does not exist!";
 
-        //        OrderFormModel formModel = new OrderFormModel()
-        //        {
-        //            SubTotalPrice = subtotalPrice,
-        //            VAT = vatPrice,
-        //            ShippingPrice = shippingPrice,
-        //            GrandTotalPrice = grandTotalPrice,
-        //        };
+                return RedirectToAction("Index", "Home");
+            }
 
-        //        return View(formModel);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return GeneralError();
-        //    }
-        //}
+            try
+            {
+                OrderStatusFormModel formModel = await orderService.GetOrderForUpdateByIdAsync(orderId);
 
-        //[HttpPost]
-        //public async Task<IActionResult> Update(OrderStatusFormModel formModel)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(formModel);
-        //    }
+                return View(formModel);
+            }
+            catch (Exception)
+            {
+                return GeneralError();
+            }
+        }
 
-        //    try
-        //    {
-        //        IEnumerable<CartToOrderItemServiceModel> orderItems = await orderService.GetAllItemsForOrderAsync(User.GetId()!);
+        [HttpPost]
+        public async Task<IActionResult> Update(OrderStatusFormModel formModel, string orderId)
+        {
+            if (!User.IsAdmin())
+            {
+                TempData[ErrorMessage] = "You cannot access this page!";
 
-        //        await orderService.CreateOrderAsync(formModel, orderItems, User.GetId()!);
+                return RedirectToAction("Index", "Home");
+            }
 
-        //        foreach (var orderItem in orderItems)
-        //        {
-        //            await cartService.RemoveProductFromCartAsync(User.GetId()!, orderItem.ProductId);
-        //        }
+            if (!ModelState.IsValid)
+            {
+                return View(formModel);
+            }
 
-        //        TempData[SuccessMessage] = "Order placed successfully!";
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return GeneralError();
-        //    }
+            bool orderExists = await orderService.OrderExistsByIdAsync(orderId);
 
-        //    return RedirectToAction("All", "Product");
-        //}
+            if (!orderExists)
+            {
+                TempData[ErrorMessage] = "The order does not exist!";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            try
+            {
+                await orderService.UpdateOrderStatusByIdAsync(orderId, formModel);
+
+                TempData[SuccessMessage] = "Order status updated successfully!";
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "Unexpected error occured while updating order status!");
+
+                return View(formModel);
+            }
+
+            return RedirectToAction("Details", "Order", new { orderId });
+        }
 
         private IActionResult GeneralError()
         {

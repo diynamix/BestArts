@@ -1,9 +1,14 @@
 ﻿@model OrderDetailsViewModel
 
+@using BestArts.Web.Infrastructure.Extensions
+
 @using static BestArts.Common.GeneralApplicationConstants;
 
 @{
     ViewData["Title"] = "Order Details";
+
+    var orderSorting = TempData.Peek("OrderSorting");
+    var orderStatus = (int)TempData.Peek("OrderStatus");
 }
 
 @section css {
@@ -11,7 +16,17 @@
 }
 
 <div class="content-wrap order-details">
-    <a class="add-btn" asp-controller="User" asp-action="Account">&lt;&lt;Back</a>
+    @if (User.IsAdmin())
+    {
+        <a class="add-btn"
+       asp-controller="Order"
+       asp-action="All"
+       asp-route-orderSorting="@orderSorting">&lt;&lt;Back</a>
+    }
+    else
+    {
+        <a class="add-btn" asp-controller="User" asp-action="Account">&lt;&lt;Back</a>
+    }
 
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
@@ -29,6 +44,10 @@
             <div class="order-status">
                 <span class="info">Status:</span>
                 @Model.OrderStatus
+                @if (User.IsAdmin())
+                {
+                    <a class="green-btn button" asp-controller="Order" asp-action="Update" asp-route-orderId="@Model.Id">Update</a>
+                }
             </div>
             <div class="order-payment">
                 <span class="info">Payment:</span>

@@ -2,11 +2,18 @@
 {
     using System.ComponentModel.DataAnnotations;
 
+    using static Common.EntityValidationConstants.Order;
+
     public class OrderStatusFormModel
     {
-        public int OrderId { get; set; }
+        public string OrderId { get; set; } = null!;
 
-        [Display(Name = "Order status")]
+        [Display(Name = "Current status")]
+        public string? OrderStatusName { get; set; }
+
+        [Required]
+        [Range(OrderStatusMinValue, OrderStatusMaxValue)]
+        [Display(Name = "New status")]
         public int OrderStatus { get; set; }
     }
 }

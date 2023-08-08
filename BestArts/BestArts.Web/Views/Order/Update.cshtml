@@ -1,7 +1,5 @@
 ﻿@model OrderStatusFormModel
 
-
-
 @using static BestArts.Common.GeneralApplicationConstants;
 
 @{
@@ -14,6 +12,26 @@
 
 <div class="content-wrap checkout">
     <h2 class="page-title divider">@ViewData["Title"]</h2>
+    <div>Order Id: @Model.OrderId</div>
+    <div>Current Status: @Model.OrderStatusName</div>
 
-    <div>Old Status:</div>
+    <form class="product-form" method="post" asp-route-orderId="@Model.OrderId">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="OrderStatus" class="required"></label>
+            <select asp-for="OrderStatus" aria-required="true">
+                <option value="0">In Progress</option>
+                <option value="1">Sent</option>
+                <option value="2">Delivered</option>
+                <option value="3">Cancelled</option>
+            </select>
+            <span asp-validation-for="OrderStatus" class="text-danger"></span>
+        </div>
+
+        <div>
+            <button class="green-btn button" type="submit">Update</button>
+            <a asp-controller="Order" asp-action="Details" asp-route-orderId="@Model.OrderId" class="danger-btn button">Cancel</a>
+        </div>
+    </form>
 </div>

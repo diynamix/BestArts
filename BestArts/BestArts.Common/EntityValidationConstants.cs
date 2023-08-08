@@ -51,6 +51,9 @@
         {
             public const int AddressMinLength = 10;
             public const int AddressMaxLength = 500;
+
+            public const int OrderStatusMinValue = 0;
+            public const int OrderStatusMaxValue = 3;
         }
 
         public static class User
