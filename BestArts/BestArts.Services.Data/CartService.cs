@@ -33,6 +33,7 @@
         public async Task<IEnumerable<AllCartsViewModel>> AllCartsAsync(string userId)
         {
             IEnumerable<AllCartsViewModel> allCarts = await dbContext.Carts
+                .Include(c => c.Product)
                 .Where(c => c.Product.IsDeleted == false &&
                             c.UserId.ToString() == userId)
                 .AsNoTracking()
@@ -66,8 +67,6 @@
                 ImageUrl = cart.Product.ImageUrl,
                 Width = cart.Product.Width,
                 Height = cart.Product.Height,
-                //Price = cart.Product.Price,
-                //Quantity = cart.Quantity,
             };
         }
 

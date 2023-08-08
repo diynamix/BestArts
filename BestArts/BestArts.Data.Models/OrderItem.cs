@@ -22,11 +22,15 @@
 
         [Comment("Ordered product")]
         [ForeignKey(nameof(ProductId))]
-        public string Product { get; set; } = null!;
+        public Product Product { get; set; } = null!;
 
         [Comment("Ordered product quantity")]
         [Required]
         public int Quantity { get; set; }
+
+        [Comment("Ordered product single price")]
+        [Required]
+        public decimal SinglePrice { get; set; }
 
         [Comment("Ordered product total price")]
         [Required]

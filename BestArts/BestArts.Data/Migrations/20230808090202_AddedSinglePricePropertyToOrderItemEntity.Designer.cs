@@ -4,6 +4,7 @@ using BestArts.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BestArts.Data.Migrations
 {
     [DbContext(typeof(BestArtsDbContext))]
-    partial class BestArtsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230808090202_AddedSinglePricePropertyToOrderItemEntity")]
+    partial class AddedSinglePricePropertyToOrderItemEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -236,6 +238,11 @@ namespace BestArts.Data.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasComment("Ordered product Id");
 
+                    b.Property<string>("Product")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasComment("Ordered product");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int")
                         .HasComment("Ordered product quantity");
@@ -251,8 +258,6 @@ namespace BestArts.Data.Migrations
                         .HasComment("Ordered product total price");
 
                     b.HasKey("OrderId", "ProductId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("OrderItems");
 
@@ -322,7 +327,7 @@ namespace BestArts.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7602516f-e8a6-4484-bd8f-9ca22631f06c"),
+                            Id = new Guid("d56f4077-538f-4d0c-aafe-571ca8a6076e"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 10m,
@@ -334,7 +339,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9a495532-b971-4a90-a2bd-5ad92df414dc"),
+                            Id = new Guid("45f29fa3-675d-45ce-a981-763230b70638"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 7.5m,
@@ -346,7 +351,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b30bdbed-bff2-4d0b-b2ed-28ca2cce3ca3"),
+                            Id = new Guid("6ae89c25-68e5-448f-82f6-73b1eb924e02"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 7.5m,
@@ -358,7 +363,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a60faa71-3611-4d8f-9de4-78428742a109"),
+                            Id = new Guid("c872989e-300d-46af-8e81-69c6cf08023b"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 10m,
@@ -370,7 +375,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5af4c636-340b-4cbb-9588-679cd2306f0d"),
+                            Id = new Guid("9d5ccc3d-f9f9-45d1-973a-0709b92950af"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 10m,
@@ -382,7 +387,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("68859fce-fcec-475e-a3c5-7fa6cba71630"),
+                            Id = new Guid("10cfd8b6-a189-4d32-9a19-64fd089a3970"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 10m,
@@ -394,7 +399,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0e88e864-3799-40e6-9787-a7edd07b664e"),
+                            Id = new Guid("e166a1d6-8363-4c2e-bc2b-b07bcc1a20f5"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 21m,
@@ -406,7 +411,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("37f66f52-974c-4bd4-a1b2-0bf315cf72c5"),
+                            Id = new Guid("49ede0bd-fc16-4a8c-9764-28571fe0b90b"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 10m,
@@ -418,7 +423,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9e29a2c1-5723-4c81-beea-21c0ca48d3f0"),
+                            Id = new Guid("8aa11a2e-b72a-4ad3-8ce0-3822931ae9c4"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 7.5m,
@@ -430,7 +435,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("28b82a6f-26a1-401f-9b6d-3d496dcb18c2"),
+                            Id = new Guid("7c47e4ca-2942-4398-90c4-3ab4d888e8ba"),
                             CategoryId = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 6m,
@@ -442,7 +447,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3f766506-a52d-4e7b-b500-cbff24103d71"),
+                            Id = new Guid("ad33e84f-fab8-4e4d-ad45-f86e23630606"),
                             CategoryId = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 4.5m,
@@ -454,7 +459,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("56a97569-64b6-4ff2-b3a0-fe72bdefb85c"),
+                            Id = new Guid("2d50a907-708a-4a2f-b4ba-3e4084daa089"),
                             CategoryId = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 4m,
@@ -466,7 +471,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("36642db2-a001-478e-a9d9-8237faf12edc"),
+                            Id = new Guid("c28ddbb9-4d38-4d04-a56d-4e7b2c50677d"),
                             CategoryId = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 5.5m,
@@ -478,7 +483,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a5962175-6f59-40f9-ae27-88c693a80499"),
+                            Id = new Guid("ebc2cd10-f7c2-40ff-a8e4-ba8a4f8b0e35"),
                             CategoryId = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 6m,
@@ -490,7 +495,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("59bdeffd-16cd-4d10-8216-daf7932694dc"),
+                            Id = new Guid("12dcf1b2-6b3a-45a0-b2db-6941257cbfa3"),
                             CategoryId = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 7m,
@@ -502,7 +507,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cc869d8d-fb3d-401a-bf61-1c2128639391"),
+                            Id = new Guid("8b54a691-534a-4b9a-a36a-e646eb020bb2"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 13.5m,
@@ -514,7 +519,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b4a90d7a-4586-4092-9777-5ac9fc4ffe93"),
+                            Id = new Guid("b7cf72b1-b4d6-4ab5-94dc-6778b16e5538"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 13.5m,
@@ -526,7 +531,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("86112c90-c5bc-4864-b2a0-425221b80e8c"),
+                            Id = new Guid("9aabd287-5c01-4f68-b0e8-85328e8100d7"),
                             CategoryId = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 13.5m,
@@ -538,7 +543,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("64d4d1de-bb7f-44db-994b-9d2666bd1420"),
+                            Id = new Guid("df9dbf31-744c-4e6d-8591-907d197fdf26"),
                             CategoryId = 4,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 7m,
@@ -550,7 +555,7 @@ namespace BestArts.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d9cbac52-c300-4e43-9a7b-889925d8ce00"),
+                            Id = new Guid("044a4a8e-ed54-4457-b5dc-cd1aea42986c"),
                             CategoryId = 3,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Height = 5m,
@@ -754,15 +759,7 @@ namespace BestArts.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BestArts.Data.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Order");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("BestArts.Data.Models.Product", b =>

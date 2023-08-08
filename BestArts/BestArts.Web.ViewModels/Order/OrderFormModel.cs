@@ -28,6 +28,8 @@
         [Display(Name = "GrandTotal price")]
         public decimal GrandTotalPrice { get; set; }
 
+        [Required]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "The field is required")]
         [Display(Name = "Accept Terms")]
         public bool AcceptTerms { get; set; }
     }

@@ -4,6 +4,7 @@
 
     using Infrastructure.Extensions;
     using Services.Data.Interfaces;
+    using Services.Data.Models.Order;
     using ViewModels.Order;
 
     using static Common.GeneralApplicationConstants;
@@ -12,10 +13,13 @@
     public class OrderController : Controller
     {
         private readonly IOrderService orderService;
+        private readonly ICartService cartService;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService,
+            ICartService cartService)
         {
             this.orderService = orderService;
+            this.cartService = cartService;
         }
 
         [HttpGet]
@@ -46,13 +50,31 @@
                 return GeneralError();
             }
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> Checkout(OrderFormModel formModel)
         {
             if (!ModelState.IsValid)
             {
                 return View(formModel);
+            }
+
+            try
+            {
+                IEnumerable<CartToOrderItemServiceModel> orderItems = await orderService.GetAllItemsForOrderAsync(User.GetId()!);
+
+                await orderService.CreateOrderAsync(formModel, orderItems, User.GetId()!);
+
+                foreach (var orderItem in orderItems)
+                {
+                    await cartService.RemoveProductFromCartAsync(User.GetId()!, orderItem.ProductId);
+                }
+
+                TempData[SuccessMessage] = "Order placed successfully!";
+            }
+            catch (Exception)
+            {
+                return GeneralError();
             }
 
             //TODO...

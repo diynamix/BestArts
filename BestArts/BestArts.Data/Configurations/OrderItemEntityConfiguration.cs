@@ -12,6 +12,10 @@
             builder
                 .Property(oi => oi.TotalPrice)
                 .HasPrecision(18, 2);
+
+            builder
+                .Property(oi => oi.SinglePrice)
+                .HasPrecision(18, 2);
         }
     }
 }

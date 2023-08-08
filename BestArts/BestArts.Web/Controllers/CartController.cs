@@ -1,10 +1,8 @@
 ﻿namespace BestArts.Web.Controllers
 {
-    using BestArts.Services.Data;
-    using BestArts.Web.Infrastructure.Extensions;
-    using BestArts.Web.ViewModels.Product;
     using Microsoft.AspNetCore.Mvc;
 
+    using Infrastructure.Extensions;
     using Services.Data.Interfaces;
     using ViewModels.Cart;
 
