@@ -5,6 +5,8 @@
     using BestArts.Data;
     using BestArts.Data.Models;
     using Interfaces;
+    using System.Collections.Generic;
+    using BestArts.Web.ViewModels.User;
 
     public class UserService : IUserService
     {
@@ -15,32 +17,18 @@
             this.dbContext = dbContext;
         }
 
-        public async Task<string> GetFirstNameByEmailAsync(string email)
+        public async Task<IEnumerable<UserViewModel>> AllAsync()
         {
-            ApplicationUser? user = await dbContext
-                .Users
-                .FirstOrDefaultAsync(u => u.Email == email);
+            var allUsers = await dbContext.Users
+                .Select(u => new UserViewModel()
+                {
+                    Id = u.Id.ToString(),
+                    Email = u.Email,
+                    FullName = $"{u.FirstName} {u.LastName}",
+                })
+                .ToListAsync();
 
-            if (user == null)
-            {
-                return string.Empty;
-            }
-
-            return user.FirstName.ToString();
-        }
-
-        public async Task<string> GetLastNameByEmailAsync(string email)
-        {
-            ApplicationUser? user = await dbContext
-                .Users
-                .FirstOrDefaultAsync(u => u.Email == email);
-
-            if (user == null)
-            {
-                return string.Empty;
-            }
-
-            return user.LastName.ToString();
+            return allUsers;
         }
 
         public async Task<string> GetFullNameByEmailAsync(string email)
@@ -48,6 +36,20 @@
             ApplicationUser? user = await dbContext
                 .Users
                 .FirstOrDefaultAsync(u => u.Email == email);
+
+            if (user == null)
+            {
+                return string.Empty;
+            }
+
+            return $"{user.FirstName} {user.LastName}";
+        }
+
+        public async Task<string> GetFullNameByIdAsync(string id)
+        {
+            ApplicationUser? user = await dbContext
+                .Users
+                .FirstOrDefaultAsync(u => u.Id.ToString() == id);
 
             if (user == null)
             {

@@ -1,7 +1,7 @@
 ﻿@model OrderAllViewModel
 
 <div class="order divider">
-    <a asp-controller="Order" asp-action="Details" asp-route-orderId="@Model.Id">
+    <a asp-area="" asp-controller="Order" asp-action="Details" asp-route-orderId="@Model.Id">
         <div class="order-id">
             Order Id: <span>@Model.Id</span>
         </div>

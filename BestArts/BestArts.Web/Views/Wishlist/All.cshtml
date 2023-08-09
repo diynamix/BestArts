@@ -44,11 +44,21 @@
                     <partial name="_ProductPartial" model="@product" />
 
                     <div class="product-btns">
-                        <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
+                        <form method="post"
+                      asp-area=""
+                      asp-controller="Product"
+                      asp-action="RemoveFromWishlist"
+                      asp-route-userId="@User.GetId()"
+                      asp-route-productId="@product.Id">
                             <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
                         </form>
 
-                        <form method="post" asp-controller="Cart" asp-action="AddToCart" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
+                        <form method="post"
+                      asp-area=""
+                      asp-controller="Cart"
+                      asp-action="AddToCart"
+                      asp-route-userId="@User.GetId()"
+                      asp-route-productId="@product.Id">
                             <input type="submit" value="Add to basket" class="wishlist-btn green-btn button" />
                         </form>
                     </div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<UserViewModel>
+
+@{
+    ViewBag.Title = "All Users";
+}
+
+<div class="content-wrap all-users">
+    <h2 class="page-title divider">@ViewData["Title"]</h2>
+
+    <table style="border-spacing: 10px; margin: auto;" class="">
+        <thead>
+            <tr>
+                <th><label>Email</label></th>
+                <th><label>Full Name</label></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td><label>@user.Email</label></td>
+                    <td><label>@user.FullName</label></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

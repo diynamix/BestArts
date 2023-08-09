@@ -28,8 +28,14 @@
             Are you sure you want to remove this product from basket?
             <div class="product-btns">
                 <br />
-                <a asp-controller="Cart" asp-action="All" class="edit-btn button">Cancel</a>
-                <form method="post" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-userId="@User.GetId()" asp-route-productId="@Model.Id">
+                <a class="edit-btn button" asp-area="" asp-controller="Cart" asp-action="All">Cancel</a>
+
+                <form method="post"
+                     asp-area=""
+                     asp-controller="Cart"
+                     asp-action="RemoveFromCart"
+                     asp-route-userId="@User.GetId()"
+                     asp-route-productId="@Model.Id">
                     <input type="submit" value="Remove" class="delete-btn button" />
                 </form>
             </div>

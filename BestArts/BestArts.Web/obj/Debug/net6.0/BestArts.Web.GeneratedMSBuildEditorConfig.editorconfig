@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Diyana/Documents/GitHub/BestArts/BestArts/BestArts.Web/Areas/Admin/Views/User/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxBbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Diyana/Documents/GitHub/BestArts/BestArts/BestArts.Web/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

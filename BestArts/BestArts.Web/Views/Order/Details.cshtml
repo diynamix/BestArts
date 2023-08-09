@@ -19,13 +19,15 @@
     @if (User.IsAdmin())
     {
         <a class="add-btn"
+       asp-area=""
        asp-controller="Order"
        asp-action="All"
-       asp-route-orderSorting="@orderSorting">&lt;&lt;Back</a>
+       asp-route-orderSorting="@orderSorting"
+       asp-route-orderStatus="@orderStatus">&lt;&lt;Back</a>
     }
     else
     {
-        <a class="add-btn" asp-controller="User" asp-action="Account">&lt;&lt;Back</a>
+        <a class="add-btn" asp-area="" asp-controller="User" asp-action="Account">&lt;&lt;Back</a>
     }
 
     <h2 class="page-title divider">@ViewData["Title"]</h2>
@@ -46,7 +48,7 @@
                 @Model.OrderStatus
                 @if (User.IsAdmin())
                 {
-                    <a class="green-btn button" asp-controller="Order" asp-action="Update" asp-route-orderId="@Model.Id">Update</a>
+                    <a class="green-btn button" asp-area="" asp-controller="Order" asp-action="Update" asp-route-orderId="@Model.Id">Update</a>
                 }
             </div>
             <div class="order-payment">

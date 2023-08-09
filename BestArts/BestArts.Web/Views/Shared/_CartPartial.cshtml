@@ -23,6 +23,7 @@
     <td class="product-quantity">
 
         <form class="product-form" method="post"
+              asp-area=""
               asp-controller="Cart"
               asp-action="UpdateCart"
               asp-route-userId="@User.GetId()"
@@ -45,7 +46,12 @@
         </form>
     </td>
     <td class="product-btns">
-        <form method="post" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-userId="@User.GetId()" asp-route-productId="@Model.ProductId">
+        <form method="post"
+            asp-area=""
+            asp-controller="Cart"
+            asp-action="RemoveFromCart"
+            asp-route-userId="@User.GetId()"
+            asp-route-productId="@Model.ProductId">
             <input type="submit" value="Remove" class="wishlist-btn danger-btn button" />
         </form>
     </td>

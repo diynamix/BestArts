@@ -42,6 +42,7 @@
                 Delivery Information
             </div>
             <form class="product-form" method="post"
+                  asp-area=""
                   asp-controller="Order"
                   asp-action="Checkout"
                   asp-route-subTotalPrice="@Model.SubTotalPrice"
@@ -50,11 +51,6 @@
                   asp-route-grandTotalPrice="@Model.GrandTotalPrice">
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                @*<div class="form-group">
-                <label asp-for="SubTotalPrice"></label>
-                <input asp-for="SubTotalPrice" disabled="disabled" />
-                </div>*@
 
                 <div class="form-group">
                     <label asp-for="PaymentMethod"></label>

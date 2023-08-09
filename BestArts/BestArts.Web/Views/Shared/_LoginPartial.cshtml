@@ -50,20 +50,20 @@
             @if (User.IsAdmin())
             {
                 <li class="nav-item">
-                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a asp-area="Admin" asp-controller="User" asp-action="All">Users</a>
                 </li>
             }
             else
             {
                 <li class="nav-item">
-                    <a asp-controller="Wishlist" asp-action="All">Wishlist</a>
+                    <a asp-area="" asp-controller="Wishlist" asp-action="All">Wishlist</a>
                 </li>
                 <li class="nav-item">
-                    <a asp-controller="Cart" asp-action="All">Basket</a>
+                    <a asp-area="" asp-controller="Cart" asp-action="All">Basket</a>
                 </li>
             }
             <li class="nav-item">
-                <a asp-controller="User" asp-action="Account">Account</a>
+                <a asp-area="" asp-controller="User" asp-action="Account">Account</a>
             </li>
         </ul>
     }

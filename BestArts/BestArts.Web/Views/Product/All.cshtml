@@ -61,15 +61,20 @@
                     <div class="product-btns admin">
                         @if (User != null && User.IsAdmin())
                         {
-                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="edit-btn green-btn button">Edit</a>
-                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="delete-btn danger-btn button">Delete</a>
+                            <a asp-area="" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="edit-btn green-btn button">Edit</a>
+                            <a asp-area="" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="delete-btn danger-btn button">Delete</a>
                         }
                         else
                         {
                             @if ((User?.Identity?.IsAuthenticated ?? false) &&
                            (await WishlistService.IsAlreadyAddedAsync(User.GetId()!, product.Id)))
                             {
-                                <form method="post" asp-controller="Product" asp-action="RemoveFromWishlist" asp-route-userId="@User.GetId()" asp-route-productId="@product.Id">
+                                <form method="post"
+                                    asp-area=""
+                                    asp-controller="Product"
+                                    asp-action="RemoveFromWishlist"
+                                    asp-route-userId="@User.GetId()"
+                                    asp-route-productId="@product.Id">
                                     <input type="submit" value="Remove from Wishlist" class="wishlist-btn danger-btn button" />
                                 </form>
                             }
@@ -80,7 +85,12 @@
                             }
                             else
                             {
-                                <form method="post" asp-controller="Product" asp-action="AddToWishlist" asp-route-userId="@User?.GetId()" asp-route-productId="@product.Id">
+                                <form method="post"
+                                    asp-area=""
+                                    asp-controller="Product"
+                                    asp-action="AddToWishlist"
+                                    asp-route-userId="@User?.GetId()"
+                                    asp-route-productId="@product.Id">
                                     <input type="submit" value="Add to wishlist" class="wishlist-btn green-btn button" />
                                 </form>
                             }
