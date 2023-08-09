@@ -196,7 +196,7 @@ main {
         letter-spacing: 1px;
     }
 
-.handmade h2, .contacts h2, .product-details h2, .login h2, .register h2, .account h2, .all-categories h2, .checkout h2 {
+.handmade h2, .contacts h2, .product-details h2, .login h2, .register h2, .account h2, .all-categories h2, .checkout h2, .all-users h2 {
     color: #87ACB0;
 }
 
