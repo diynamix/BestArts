@@ -11,10 +11,7 @@
 }
 
 <div class="content-wrap all-categories">
-    @if (User.IsAdmin())
-    {
-        <a class="add-btn green-btn button" asp-area="" asp-controller="Category" asp-action="Add">Add</a>
-    }
+    <a class="add-btn green-btn button" asp-area="Admin" asp-controller="Category" asp-action="Add">Add</a>
 
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
@@ -35,10 +32,7 @@
                             @category.Name
                         </div>
                         <div class="category-btns">
-                            @if (User != null && User.IsAdmin())
-                            {
-                                <a asp-area="" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="edit-btn green-btn button">Edit</a>
-                            }
+                            <a asp-area="Admin" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="edit-btn green-btn button">Edit</a>
                         </div>
                     </div>
                 }

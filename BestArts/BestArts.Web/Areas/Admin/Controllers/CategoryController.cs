@@ -1,4 +1,4 @@
-﻿namespace BestArts.Web.Controllers
+﻿namespace BestArts.Web.Areas.Admin.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
 
@@ -7,9 +7,11 @@
     using Services.Data.Interfaces;
 
     using static Common.NotificationMessagesConstants;
+    using static Common.GeneralApplicationConstants;
 
-    public class CategoryController : BaseController
+    public class CategoryController : BaseAdminController
     {
+
         private readonly ICategoryService categoryService;
 
         public CategoryController(ICategoryService categoryService)
@@ -20,28 +22,14 @@
         [HttpGet]
         public async Task<IActionResult> All()
         {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("All", "Product");
-            }
-
             IEnumerable<AllCategoriesViewModel> viewModel = await categoryService.AllCategoriesAsync();
 
             return View(viewModel);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Add()
+        public IActionResult Add()
         {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
             try
             {
                 CategoryFormModel model = new CategoryFormModel();
@@ -57,13 +45,6 @@
         [HttpPost]
         public async Task<IActionResult> Add(CategoryFormModel model)
         {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
             bool categoryExists = await categoryService.ExistsByNameAsync(model.Name);
 
             if (categoryExists)
@@ -87,25 +68,19 @@
                 return View(model);
             }
 
-            return RedirectToAction("All", "Category");
+            return RedirectToAction("All", "Category", new { Area = AdminAreaName });
         }
 
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-                return RedirectToAction("Index", "Home");
-            }
-
             bool categoryExists = await categoryService.ExistsByIdAsync(int.Parse(id));
 
             if (!categoryExists)
             {
                 TempData[ErrorMessage] = "The category does not exist!";
 
-                return RedirectToAction("All", "Product");
+                return RedirectToAction("All", "Category", new { Area = AdminAreaName });
             }
 
             try
@@ -123,13 +98,6 @@
         [HttpPost]
         public async Task<IActionResult> Edit(string id, CategoryFormModel model)
         {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -141,7 +109,7 @@
             {
                 TempData[ErrorMessage] = "The category does not exist!";
 
-                return RedirectToAction("All", "Product");
+                return RedirectToAction("All", "Category", new { Area = AdminAreaName });
             }
 
             try
@@ -155,14 +123,14 @@
                 return View(model);
             }
 
-            return RedirectToAction("All", "Category");
+            return RedirectToAction("All", "Category", new { Area = AdminAreaName });
         }
 
         private IActionResult GeneralError()
         {
             TempData[ErrorMessage] = "Unexpected error occurred!";
 
-            return RedirectToAction("All", "Product");
+            return RedirectToAction("All", "Category", new { Area = AdminAreaName });
         }
     }
 }
