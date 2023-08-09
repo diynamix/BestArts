@@ -69,7 +69,7 @@
             return RedirectToAction("All", "Wishlist", new
             {
                 currentPage = TempData.Peek("CurrentPage"),
-                categorySort = TempData.Peek("Category"),
+                categorySort = TempData.Peek("CategorySort"),
                 searchString = TempData.Peek("SearchString"),
                 productSorting = (int)TempData.Peek("ProductSorting")
             });

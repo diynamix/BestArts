@@ -1,0 +1,41 @@
+/* ********** PAGINATION ********** */
+.pagination-section {
+    margin: 0 0 30px 0;
+}
+
+.pagination {
+    min-width: 350px;
+    max-width: 500px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-arrow, .page-number {
+    font-size: 24px;
+    color: #808080;
+    text-decoration: none;
+}
+
+    .btn-arrow:hover, .page-number:hover {
+        color: #6B6B6B;
+    }
+
+.page-number {
+    padding: 2px;
+}
+
+    .page-number:not(:last-child) {
+        margin: 0 7px 0 0;
+    }
+
+.link-disabled {
+    color: #ADADAD;
+    pointer-events: none;
+}
+
+.current-page {
+    color: #6B6B6B;
+    text-decoration: underline;
+}

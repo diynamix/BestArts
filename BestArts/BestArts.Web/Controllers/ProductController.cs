@@ -29,14 +29,14 @@
         [HttpGet]
         public async Task<IActionResult> All([FromQuery] AllProductsQueryModel queryModel)
         {
-            //if ((TempData["ProductsLeftOnPage"] != null) &&
-            //    ((int)TempData["ProductsLeftOnPage"] == 1))
-            //{
-            //    queryModel.CurrentPage
-            //        = queryModel.CurrentPage <= 1
-            //        ? 1
-            //        : queryModel.CurrentPage - 1;
-            //}
+            if ((TempData["ProductsLeftOnPage"] != null) &&
+                ((int)TempData["ProductsLeftOnPage"] == 1))
+            {
+                queryModel.CurrentPage
+                    = queryModel.CurrentPage <= 1
+                    ? 1
+                    : queryModel.CurrentPage - 1;
+            }
 
             AllProductsFilteredAndPagedServiceModel serviceModel = await productService.AllAsync(queryModel);
 
@@ -254,7 +254,7 @@
                 return RedirectToAction("All", "Product", new
                 {
                     currentPage = TempData.Peek("CurrentPage"),
-                    categorySort = TempData.Peek("Category"),
+                    categorySort = TempData.Peek("CategorySort"),
                     searchString = TempData.Peek("SearchString"),
                     productSorting = (int)TempData.Peek("ProductSorting")
                 });
@@ -333,7 +333,7 @@
             return RedirectToAction("All", "Product", new
             {
                 currentPage = TempData.Peek("CurrentPage"),
-                categorySort = TempData.Peek("Category"),
+                categorySort = TempData.Peek("CategorySort"),
                 searchString = TempData.Peek("SearchString"),
                 productSorting = (int)TempData.Peek("ProductSorting")
             });
@@ -378,10 +378,12 @@
                 return GeneralError();
             }
 
+            await Console.Out.WriteLineAsync(TempData.Peek("ReturnPage")?.ToString());
+
             return RedirectToAction("All", TempData["ReturnPage"]?.ToString() ?? "Product", new
             {
                 currentPage = TempData.Peek("CurrentPage"),
-                categorySort = TempData.Peek("Category"),
+                categorySort = TempData.Peek("CategorySort"),
                 searchString = TempData.Peek("SearchString"),
                 productSorting = (int)TempData.Peek("ProductSorting")
             });

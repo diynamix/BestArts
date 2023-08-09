@@ -1,0 +1,37 @@
+/* ********** FILTER ********** */
+.filter-section {
+    margin: 0 0 30px 0;
+}
+
+.filter-form {
+    font-size: 0;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+.form-group {
+    display: inline-block;
+}
+
+    .form-group:not(:last-child) {
+        margin: 0 20px 10px 0;
+    }
+
+.search-btn {
+    cursor: pointer;
+    padding: 4px 6px;
+}
+    .search-btn:hover {
+        background-color: #F0F0F0;
+    }
+
+input, textarea, select {
+    font-size: 16px;
+    padding: 4px;
+    background-color: #f7f7f7;
+    border: 1.4px solid black;
+    border-radius: 4px;
+}

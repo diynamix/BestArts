@@ -17,7 +17,7 @@
             Products = new HashSet<ProductAllViewModel>();
         }
 
-        public string? Category { get; set; }
+        public string? CategorySort { get; set; }
 
         [Display(Name = "Search")]
         public string? SearchString { get; set; }

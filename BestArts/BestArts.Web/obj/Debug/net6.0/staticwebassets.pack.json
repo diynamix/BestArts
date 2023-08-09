@@ -41,12 +41,20 @@
       "PackagePath": "staticwebassets\\css\\styles_orders.css"
     },
     {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_pagination.css",
+      "PackagePath": "staticwebassets\\css\\styles_pagination.css"
+    },
+    {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_product_details.css",
       "PackagePath": "staticwebassets\\css\\styles_product_details.css"
     },
     {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_products.css",
       "PackagePath": "staticwebassets\\css\\styles_products.css"
+    },
+    {
+      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_products_filter.css",
+      "PackagePath": "staticwebassets\\css\\styles_products_filter.css"
     },
     {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\favicon.ico",

@@ -38,10 +38,10 @@
                 .Where(p => p.IsDeleted == false)
                 .AsQueryable();
 
-            if (!string.IsNullOrEmpty(queryModel.Category))
+            if (!string.IsNullOrEmpty(queryModel.CategorySort))
             {
                 productsQuery = productsQuery
-                    .Where(p => p.Category.Name == queryModel.Category);
+                    .Where(p => p.Category.Name == queryModel.CategorySort);
             }
 
             if (!string.IsNullOrEmpty(queryModel.SearchString))

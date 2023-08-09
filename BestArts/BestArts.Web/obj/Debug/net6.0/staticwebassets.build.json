@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Gza7FuacQwZDF/wZCkx4DCAa2NQkFo5Z9xVNfglRWJE=",
+  "Hash": "hssF7tpJEuv8k3Bx6po74n53D8KOTwLlLLRxQufeAMk=",
   "Source": "BestArts.Web",
   "BasePath": "_content/BestArts.Web",
   "Mode": "Default",
@@ -1224,6 +1224,23 @@
       "OriginalItemSpec": "wwwroot\\css\\styles_orders.css"
     },
     {
+      "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_pagination.css",
+      "SourceId": "BestArts.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\",
+      "BasePath": "_content/BestArts.Web",
+      "RelativePath": "css/styles_pagination.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles_pagination.css"
+    },
+    {
       "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_product_details.css",
       "SourceId": "BestArts.Web",
       "SourceType": "Discovered",
@@ -1256,6 +1273,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles_products.css"
+    },
+    {
+      "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles_products_filter.css",
+      "SourceId": "BestArts.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\",
+      "BasePath": "_content/BestArts.Web",
+      "RelativePath": "css/styles_products_filter.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles_products_filter.css"
     },
     {
       "Identity": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\favicon.ico",

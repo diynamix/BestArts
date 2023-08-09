@@ -10,9 +10,11 @@
     ViewData["Title"] = "Product Details";
 
     var currentPage = TempData.Peek("CurrentPage");
-    var category = TempData.Peek("Category");
+    var categorySort = TempData.Peek("CategorySort");
     var searchString = TempData.Peek("SearchString");
-    var productSorting = (int)TempData.Peek("ProductSorting");
+    var productSorting = TempData.Peek("ProductSorting");
+
+    Console.WriteLine(currentPage + "curent page");
 }
 
 @section css {
@@ -21,9 +23,9 @@
 
 
 <div class="content-wrap product-details">
-    <a class="add-btn" asp-controller="@(TempData["ReturnRage"] ?? "Product")" asp-action="All"
+    <a class="add-btn" asp-controller="@(TempData.Peek("ReturnPage") ?? "Product")" asp-action="All"
        asp-route-currentPage="@currentPage"
-       asp-route-category="@category"
+       asp-route-categorySort="@categorySort"
        asp-route-searchString="@searchString"
        asp-route-productSorting="@(productSorting)">&lt;&lt;Back</a>
 
