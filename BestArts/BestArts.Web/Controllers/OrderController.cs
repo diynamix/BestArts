@@ -20,25 +20,7 @@
         {
             this.orderService = orderService;
             this.cartService = cartService;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> All([FromQuery] AllOrdersQueryModel queryModel)
-        {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
-            AllOrdersFilteredServiceModel serviceModel = await orderService.AllAsync(queryModel);
-
-            queryModel.Orders = serviceModel.Orders;
-            queryModel.TotalOrders = serviceModel.TotalOrdersCount;
-
-            return View(queryModel);
-        }
+        }        
 
         [HttpGet]
         public async Task<IActionResult> Checkout()
@@ -124,77 +106,6 @@
             {
                 return GeneralError();
             }
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Update(string orderId)
-        {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
-            bool orderExists = await orderService.OrderExistsByIdAsync(orderId);
-
-            if (!orderExists)
-            {
-                TempData[ErrorMessage] = "The order does not exist!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
-            try
-            {
-                OrderStatusFormModel formModel = await orderService.GetOrderForUpdateByIdAsync(orderId);
-
-                return View(formModel);
-            }
-            catch (Exception)
-            {
-                return GeneralError();
-            }
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Update(OrderStatusFormModel formModel, string orderId)
-        {
-            if (!User.IsAdmin())
-            {
-                TempData[ErrorMessage] = "You cannot access this page!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return View(formModel);
-            }
-
-            bool orderExists = await orderService.OrderExistsByIdAsync(orderId);
-
-            if (!orderExists)
-            {
-                TempData[ErrorMessage] = "The order does not exist!";
-
-                return RedirectToAction("Index", "Home");
-            }
-
-            try
-            {
-                await orderService.UpdateOrderStatusByIdAsync(orderId, formModel);
-
-                TempData[SuccessMessage] = "Order status updated successfully!";
-            }
-            catch (Exception)
-            {
-                ModelState.AddModelError(string.Empty, "Unexpected error occured while updating order status!");
-
-                return View(formModel);
-            }
-
-            return RedirectToAction("Details", "Order", new { orderId });
         }
 
         private IActionResult GeneralError()
