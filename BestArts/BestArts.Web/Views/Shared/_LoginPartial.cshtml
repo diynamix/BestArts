@@ -2,6 +2,8 @@
 @using BestArts.Data.Models
 @using BestArts.Web.Infrastructure.Extensions
 
+@using static BestArts.Common.GeneralApplicationConstants
+
 @inject SignInManager<ApplicationUser> SignInManager
 
 <div id="nav-bar">
@@ -26,10 +28,10 @@
                 <a asp-area="" asp-controller="Product" asp-action="All">Products</a>
             </li>
             <li class="nav-item">
-                <a asp-area="Admin" asp-controller="Category" asp-action="All">Categories</a>
+                <a asp-area="@AdminAreaName" asp-controller="Category" asp-action="All">Categories</a>
             </li>
             <li class="nav-item">
-                <a asp-area="Admin" asp-controller="Order" asp-action="All">Orders</a>
+                <a asp-area="@AdminAreaName" asp-controller="Order" asp-action="All">Orders</a>
             </li>
         </ul>
     }
@@ -50,7 +52,7 @@
             @if (User.IsAdmin())
             {
                 <li class="nav-item">
-                    <a asp-area="Admin" asp-controller="User" asp-action="All">Users</a>
+                    <a asp-area="@AdminAreaName" asp-controller="User" asp-action="All">Users</a>
                 </li>
             }
             else

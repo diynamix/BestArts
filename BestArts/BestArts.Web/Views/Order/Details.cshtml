@@ -19,7 +19,7 @@
     @if (User.IsAdmin())
     {
         <a class="add-btn"
-       asp-area="Admin"
+       asp-area="@AdminAreaName"
        asp-controller="Order"
        asp-action="All"
        asp-route-orderSorting="@orderSorting"
@@ -48,7 +48,7 @@
                 @Model.OrderStatus
                 @if (User.IsAdmin())
                 {
-                    <a class="green-btn button" asp-area="Admin" asp-controller="Order" asp-action="Update" asp-route-orderId="@Model.Id">Update</a>
+                    <a class="green-btn button" asp-area="@AdminAreaName" asp-controller="Order" asp-action="Update" asp-route-orderId="@Model.Id">Update</a>
                 }
             </div>
             <div class="order-payment">

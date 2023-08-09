@@ -83,14 +83,14 @@
                 return View(formModel);
             }
 
-            return RedirectToAction("Details", "Order", new { orderId, Area = String.Empty });
+            return RedirectToAction("Details", "Order", new { orderId, Area = string.Empty });
         }
 
         private IActionResult GeneralError()
         {
             TempData[ErrorMessage] = "Unexpected error occurred!";
 
-            return RedirectToAction("All", "Product");
+            return RedirectToAction("All", "Order", new { Area = AdminAreaName });
         }
     }
 }

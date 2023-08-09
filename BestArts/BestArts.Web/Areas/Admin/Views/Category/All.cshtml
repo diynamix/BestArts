@@ -2,6 +2,8 @@
 
 @using BestArts.Web.Infrastructure.Extensions
 
+@using static BestArts.Common.GeneralApplicationConstants
+
 @{
     ViewData["Title"] = "Categories";
 }
@@ -11,7 +13,7 @@
 }
 
 <div class="content-wrap all-categories">
-    <a class="add-btn green-btn button" asp-area="Admin" asp-controller="Category" asp-action="Add">Add</a>
+    <a class="add-btn green-btn button" asp-area="@AdminAreaName" asp-controller="Category" asp-action="Add">Add</a>
 
     <h2 class="page-title divider">@ViewData["Title"]</h2>
 
@@ -32,7 +34,7 @@
                             @category.Name
                         </div>
                         <div class="category-btns">
-                            <a asp-area="Admin" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="edit-btn green-btn button">Edit</a>
+                            <a asp-area="@AdminAreaName" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="edit-btn green-btn button">Edit</a>
                         </div>
                     </div>
                 }

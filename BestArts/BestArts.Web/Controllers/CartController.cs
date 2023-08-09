@@ -75,38 +75,6 @@
             });
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Delete(string userid, string productId)
-        //{
-        //    bool productExists = await productService.ExistsByIdAsync(productId);
-
-        //    if (!productExists)
-        //    {
-        //        TempData[ErrorMessage] = "The product does not exist!";
-        //        return RedirectToAction("All", "Product");
-        //    }
-
-        //    bool alreadyAdded = await cartService.IsAlreadyAddedAsync(userid, productId);
-
-        //    if (!alreadyAdded)
-        //    {
-        //        TempData[ErrorMessage] = "This product is not added to your wishlist!";
-
-        //        return RedirectToAction("All", "Product");
-        //    }
-
-        //    try
-        //    {
-        //        DeleteCartProductViewModel model = await cartService.GetProductForDeletingFromCartAsync(userid, productId);
-
-        //        return View(model);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return GeneralError();
-        //    }
-        //}
-
         [HttpPost]
         public async Task<IActionResult> RemoveFromCart(string userid, string productId)
         {

@@ -15,7 +15,7 @@
     <div>Order Id: @Model.OrderId</div>
     <div>Current Status: @Model.OrderStatusName</div>
 
-    <form class="product-form" method="post" asp-area="Admin" asp-route-orderId="@Model.OrderId">
+    <form class="product-form" method="post" asp-area="@AdminAreaName" asp-route-orderId="@Model.OrderId">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="form-group">

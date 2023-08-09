@@ -2,7 +2,6 @@
 {
     using Microsoft.AspNetCore.Mvc;
 
-    using Infrastructure.Extensions;
     using ViewModels.Category;
     using Services.Data.Interfaces;
 

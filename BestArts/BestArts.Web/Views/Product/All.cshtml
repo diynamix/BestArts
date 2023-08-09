@@ -3,6 +3,8 @@
 @using BestArts.Services.Data.Interfaces
 @using BestArts.Web.Infrastructure.Extensions
 
+@using static BestArts.Common.GeneralApplicationConstants
+
 @inject IWishlistService WishlistService
 @inject ICartService CartService
 
@@ -30,7 +32,7 @@
 <div class="content-wrap handmade">
     @if (User.IsAdmin())
     {
-        <a class="add-btn green-btn button" asp-area="" asp-controller="Product" asp-action="Add">Add</a>
+        <a class="add-btn green-btn button" asp-area="@AdminAreaName" asp-controller="Product" asp-action="Add">Add</a>
     }
 
     <h2 class="page-title divider">@ViewData["Title"]</h2>
@@ -61,8 +63,8 @@
                     <div class="product-btns admin">
                         @if (User != null && User.IsAdmin())
                         {
-                            <a asp-area="" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="edit-btn green-btn button">Edit</a>
-                            <a asp-area="" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="delete-btn danger-btn button">Delete</a>
+                            <a asp-area="@AdminAreaName" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="edit-btn green-btn button">Edit</a>
+                            <a asp-area="@AdminAreaName" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="delete-btn danger-btn button">Delete</a>
                         }
                         else
                         {
