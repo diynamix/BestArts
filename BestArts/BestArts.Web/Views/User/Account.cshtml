@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<OrderAllViewModel>
 
 @using BestArts.Services.Data.Interfaces
+@using BestArts.Web.Infrastructure.Extensions
 
 @inject IUserService userService
 
 @{
-    ViewData["Title"] = await userService.GetFullNameByEmailAsync(User.Identity?.Name!);
+    ViewData["Title"] = await userService.GetFullNameByIdAsync(User.GetId()!);
 }
 
 @section css {

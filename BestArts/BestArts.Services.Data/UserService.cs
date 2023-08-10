@@ -31,20 +31,6 @@
             return allUsers;
         }
 
-        public async Task<string> GetFullNameByEmailAsync(string email)
-        {
-            ApplicationUser? user = await dbContext
-                .Users
-                .FirstOrDefaultAsync(u => u.Email == email);
-
-            if (user == null)
-            {
-                return string.Empty;
-            }
-
-            return $"{user.FirstName} {user.LastName}";
-        }
-
         public async Task<string> GetFullNameByIdAsync(string id)
         {
             ApplicationUser? user = await dbContext

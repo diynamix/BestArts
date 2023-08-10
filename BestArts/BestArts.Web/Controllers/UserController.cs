@@ -4,26 +4,35 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Caching.Memory;
 
     using Data.Models;
     using Infrastructure.Extensions;
     using Services.Data.Interfaces;
     using ViewModels.User;
 
+    using static Common.GeneralApplicationConstants;
     using static Common.NotificationMessagesConstants;
 
     public class UserController : BaseController
     {
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
+
+        private readonly IMemoryCache memoryCache;
+
         private readonly IOrderService orderService;
 
         public UserController(SignInManager<ApplicationUser> signInManager,
             UserManager<ApplicationUser> userManager,
+            IMemoryCache memoryCache,
             IOrderService orderService)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
+
+            this.memoryCache = memoryCache;
+
             this.orderService = orderService;
         }
 
@@ -71,6 +80,8 @@
 
             await signInManager.SignInAsync(user, false);
 
+            memoryCache.Remove(UsersCacheKey);
+
             return RedirectToAction("All", "Product");
         }
 
@@ -114,10 +125,10 @@
             if (!result.Succeeded)
             {
                 TempData[ErrorMessage] = "An error occured while login. Please try again!";
-                
+
                 return View(model);
             }
-            
+
             //return Redirect(model.ReturnUrl ?? "/Home/Index");
             return RedirectToAction("All", "Product");
 

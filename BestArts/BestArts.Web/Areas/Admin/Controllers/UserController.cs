@@ -28,7 +28,10 @@
             {
                 users = await userService.AllAsync();
 
-                MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(UsersCacheDurationMinutes));
+                MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions().
+                    SetAbsoluteExpiration(TimeSpan.FromMinutes(UsersCacheDurationMinutes));
+
+                memoryCache.Set(UsersCacheKey, users, cacheOptions);
             }
 
             return View(users);
