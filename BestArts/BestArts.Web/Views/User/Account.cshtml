@@ -16,7 +16,7 @@
 
 
 <div class="content-wrap account">
-    <h2 class="page-title divider">@ViewData["Title"]</h2>
+    <h2 class="page-title divider">@ViewData["Title"]@(User.IsAdmin() ? " (Admin)" : "")</h2>
 
     <div class="logout">
         <form class="logout-form" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
@@ -24,14 +24,17 @@
         </form>
     </div>
 
-    <div class="orders">
-        <div class="order-info-header">My orders</div>
+    @if (!User.IsAdmin())
+    {
+        <div class="orders">
+            <div class="order-info-header">My orders</div>
 
-        @foreach (var order in Model)
-        {
-            <partial name="_OrderPartial" model="@order" />
-        }
-    </div>
+            @foreach (var order in Model)
+            {
+                <partial name="_OrderPartial" model="@order" />
+            }
+        </div>
+    }
 </div>
 
 @section Scripts {

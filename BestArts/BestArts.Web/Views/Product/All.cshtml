@@ -10,7 +10,7 @@
 
 
 @{
-    ViewData["Title"] = "Handmade";
+    ViewData["Title"] = User.IsAdmin() ? "Products" : "Handmade";
 
     var products = Model.Products.ToList();
 

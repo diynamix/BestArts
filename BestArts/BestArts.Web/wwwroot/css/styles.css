@@ -185,7 +185,7 @@ main {
 
     main h2 {
         font-size: 1.6rem;
-        color: #C08497;
+        color: #87ACB0;
         letter-spacing: 2px;
         text-align: center;
         margin: 0 0 40px 0;
@@ -196,8 +196,8 @@ main {
         letter-spacing: 1px;
     }
 
-.handmade h2, .contacts h2, .product-details h2, .login h2, .register h2, .account h2, .all-categories h2, .checkout h2, .all-users h2 {
-    color: #87ACB0;
+.wishlist h2, .cart h2 {
+    color: #C08497;
 }
 
 /* Footer
@@ -332,10 +332,34 @@ footer {
         footer span:first-of-type {
             margin-bottom: 6px !important;
         }
+
+    /* ***** ADMIN ***** */
+    .admin .drop-logo-settings {
+        border-bottom: 1px solid #64a7d1 !important;
+    }
+
+    .admin nav li {
+        background-color: #64a7d1;
+    }
 }
 
 @media screen and (max-width: 405px) {
     .page-title {
         display: none;
     }
+}
+
+
+/* ***** ADMIN ***** */
+.admin header, .admin footer {
+    background-color: #1f495d;
+}
+
+.admin h1 {
+    color: #64a7d1;
+}
+
+.admin footer, .admin footer a {
+    background-color: #1f495d;
+    color: #FFFFFF
 }
