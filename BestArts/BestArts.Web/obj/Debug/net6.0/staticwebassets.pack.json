@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BestArts.Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BestArts.Web.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\Diyana\\Documents\\GitHub\\BestArts\\BestArts\\BestArts.Web\\wwwroot\\css\\styles.css",
       "PackagePath": "staticwebassets\\css\\styles.css"
     },

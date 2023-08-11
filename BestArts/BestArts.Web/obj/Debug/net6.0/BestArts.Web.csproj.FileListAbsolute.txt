@@ -61,9 +61,7 @@ C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\scopedcss\bundle\BestArts.Web.styles.css
-C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\scopedcss\projectbundle\BestArts.Web.bundle.scp.css
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\BestArts.Web.csproj.CopyComplete
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\BestArts.Web.dll
 C:\Users\Diyana\Documents\GitHub\BestArts\BestArts\BestArts.Web\obj\Debug\net6.0\refint\BestArts.Web.dll

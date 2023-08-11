@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestArts.Services.Data.Mode
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B01A7080-392C-4621-8D1A-077B54F7804E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestArts.Services.Tests", "BestArts.Services.Tests\BestArts.Services.Tests.csproj", "{6BFC25BF-DF3B-4B35-A103-5FFE043121FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestArts.Services.Tests", "BestArts.Services.Tests\BestArts.Services.Tests.csproj", "{6BFC25BF-DF3B-4B35-A103-5FFE043121FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
