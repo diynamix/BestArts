@@ -11,6 +11,7 @@ namespace BestArts.Services.Tests
     {
         private DbContextOptions<BestArtsDbContext> dbOptions;
         private BestArtsDbContext dbContext;
+
         private IUserService userService;
 
         public static ApplicationUser user1;
