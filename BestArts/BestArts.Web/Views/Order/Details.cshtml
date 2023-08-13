@@ -8,7 +8,7 @@
     ViewData["Title"] = "Order Details";
 
     var orderSorting = TempData.Peek("OrderSorting");
-    var orderStatus = (int)TempData.Peek("OrderStatus");
+    var orderStatus = TempData.Peek("OrderStatus");
 }
 
 @section css {

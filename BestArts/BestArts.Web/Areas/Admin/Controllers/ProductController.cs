@@ -5,7 +5,6 @@
     using Services.Data.Interfaces;
     using ViewModels.Product;
 
-    using static Common.GeneralApplicationConstants;
     using static Common.NotificationMessagesConstants;
 
     public class ProductController : BaseAdminController
